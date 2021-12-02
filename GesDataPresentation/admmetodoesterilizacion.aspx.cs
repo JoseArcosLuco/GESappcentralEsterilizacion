@@ -100,17 +100,19 @@ namespace ges.data.presentation
                     {
                         string identificador = pdto.idMetodoEsterilizacion.ToString();
                         string cadest = "Activar";
+                        string cadestDesc = "Desactivo";
                         string cadclass = "glyphicon-remove";
                         if (pdto.estado == 1)
                         {
                             cadest = "Desactivar";
+                            cadestDesc = "Activo";
                             cadclass = "glyphicon-ok";
                         }
                         tbl.Append("<tr id=\"fila" + identificador + "\">");
                         tbl.Append("<td>" + identificador + "</td>");
                         tbl.Append("<td>" + pdto.codigo.ToString() + "</td>");
                         tbl.Append("<td>" + pdto.nombre.ToString() + "</td>");
-                        tbl.Append("<td id=\"valestado_" + identificador + "\" rel=\"" + pdto.estado + "\">" + cadest + "</td>");
+                        tbl.Append("<td id=\"valestado_" + identificador + "\" rel=\"" + pdto.estado + "\">" + cadestDesc + "</td>");
                         tbl.Append("<td class=\"text-right\">");
                         tbl.Append("&nbsp;<button id=\"btncambiaestado_" + identificador + "\" type=\"button\" class=\"btn btn - secondary btn - fw\" runat=\"server\" OnClick=\"javascript:CambiarEstado(" + identificador + "," + pdto.estado.ToString() + ")\"><i class=\"mdi mdi-cloud-download\">" + cadest + "</i></button>");
                         tbl.Append("&nbsp;<button id=\"btneliminar_" + identificador + "\" type=\"button\" class=\"btn btn-danger btn-fw\" runat=\"server\" OnClick=\"javascript:Eliminar(" + identificador + ")\"><i class=\"mdi mdi-alert-outline\">Eliminar</i></button>");
