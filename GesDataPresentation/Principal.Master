@@ -1,0 +1,412 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Principal.master.cs" Inherits="ges.data.presentation.Principal" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="./images/favicon.png" />
+    <link rel="stylesheet" href="./vendors/iconfonts/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="./vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="./vendors/css/vendor.bundle.addons.css">
+
+
+    
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+       
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="container-scroller">
+    <!-- partial:../../partials/_navbar.html -->
+    <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+        <a class="navbar-brand brand-logo" href="default.aspx">
+          <!--img src="./images/logo.svg" alt="logo" /-->
+          <img src="./images/LogoPng.Png" alt="logo" />
+        </a>
+        <a class="navbar-brand brand-logo-mini" href="default.aspx">
+          <!--img src="./images/logo-mini.svg" alt="logo" /-->
+          <img src="./images/LogoPng.Png" alt="logo" />
+        </a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center">
+        <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
+          <li class="nav-item">
+            <a href="#" class="nav-link">Schedule
+              <span class="badge badge-primary ml-1">New</span>
+            </a>
+          </li>
+          <li class="nav-item active">
+            <a href="#" class="nav-link">
+              <i class="mdi mdi-elevation-rise"></i>Reportes</a>
+          </li>
+          <li class="nav-item">
+            <a href="#" onclick="SalirApp('cerrar.aspx')" class="nav-link">
+              <i class="mdi mdi-bookmark-plus-outline"></i>Salir APP</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav navbar-nav-right">
+          <li class="nav-item dropdown">
+            <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+              <i class="mdi mdi-file-document-box"></i>
+              <span class="count">7</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
+              <div class="dropdown-item">
+                <p class="mb-0 font-weight-normal float-left">7 mails sin leer
+                </p>
+                <span class="badge badge-info badge-pill float-right">Ver Todos</span>
+              </div>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <img src="images/faces/face4.jpg" alt="image" class="profile-pic">
+                </div>
+                <div class="preview-item-content flex-grow">
+                  <h6 class="preview-subject ellipsis font-weight-medium text-dark">Jefa Pabellon
+                    <span class="float-right font-weight-light small-text">1 Minuto Atras</span>
+                  </h6>
+                  <p class="font-weight-light small-text">
+                    Reunion Cancelada!
+                  </p>
+                </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <img src="images/faces/face2.jpg" alt="image" class="profile-pic">
+                </div>
+                <div class="preview-item-content flex-grow">
+                  <h6 class="preview-subject ellipsis font-weight-medium text-dark">Francisco Farmacia
+                    <span class="float-right font-weight-light small-text">15 Minutos Atras</span>
+                  </h6>
+                  <p class="font-weight-light small-text">
+                    Nuevo Producto de llegada
+                  </p>
+                </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <img src="images/faces/face3.jpg" alt="image" class="profile-pic">
+                </div>
+                <div class="preview-item-content flex-grow">
+                  <h6 class="preview-subject ellipsis font-weight-medium text-dark"> Juan Perez
+                    <span class="float-right font-weight-light small-text">18 Minutos Atras</span>
+                  </h6>
+                  <p class="font-weight-light small-text">
+                    Se confirma reunion
+                  </p>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+              <i class="mdi mdi-bell"></i>
+              <span class="count">4</span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+              <a class="dropdown-item">
+                <p class="mb-0 font-weight-normal float-left">Tienes 4 notificaciones
+                </p>
+                <span class="badge badge-pill badge-warning float-right">Ver Todas</span>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-success">
+                    <i class="mdi mdi-alert-circle-outline mx-0"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-medium text-dark">App Error</h6>
+                  <p class="font-weight-light small-text">
+                    Ahora!
+                  </p>
+                </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-warning">
+                    <i class="mdi mdi-comment-text-outline mx-0"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-medium text-dark">Configuraciones</h6>
+                  <p class="font-weight-light small-text">
+                    Mensajes Privados
+                  </p>
+                </div>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-info">
+                    <i class="mdi mdi-email-outline mx-0"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-medium text-dark">Nuevo Usuario</h6>
+                  <p class="font-weight-light small-text">
+                    2 dias Atras
+                  </p>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item dropdown d-none d-xl-inline-block">
+            <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+              <span class="profile-text">Hola, <asp:Label ID="lblNombreUsuario" runat="server" Text=""></asp:Label></span>
+              <img class="img-xs rounded-circle" src="images/faces/face16.jpg" alt="Profile image">
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+              <a class="dropdown-item p-0">
+                <div class="d-flex border-bottom">
+                  <div class="py-3 px-4 d-flex align-items-center justify-content-center">
+                    <i class="mdi mdi-bookmark-plus-outline mr-0 text-gray"></i>
+                  </div>
+                  <div class="py-3 px-4 d-flex align-items-center justify-content-center border-left border-right">
+                    <i class="mdi mdi-account-outline mr-0 text-gray"></i>
+                  </div>
+                  <div class="py-3 px-4 d-flex align-items-center justify-content-center">
+                    <i class="mdi mdi-alarm-check mr-0 text-gray"></i>
+                  </div>
+                </div>
+              </a>
+              <a class="dropdown-item mt-2">
+                Gestionar Cuentas
+              </a>
+              <a class="dropdown-item">
+                Cambiar Password
+              </a>
+              <a class="dropdown-item">
+                Revisar Ingresos
+              </a>
+              <a class="dropdown-item" href="cerrar.aspx">
+                Cerrar Sessión
+              </a>
+            </div>
+          </li>
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+          <span class="mdi mdi-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:../../partials/_sidebar.html -->
+      
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item nav-profile">
+            <div class="nav-link">
+              <div class="user-wrapper">
+                <div class="profile-image">
+                  <img src="images/faces/face16.jpg" alt="profile image">
+                </div>
+                <div class="text-wrapper">
+                  <p class="profile-name"><asp:Label ID="lblNombreUsuarioLeft" runat="server" Text=""></asp:Label>!</p>
+                  <div>
+                    <small class="designation text-muted">Manager</small>
+                    <span class="status-indicator online"></span>
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-success btn-block">Nueva Solicitud
+                <i class="mdi mdi-plus"></i>
+              </button>
+            </div>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="./Default.aspx">
+              <i class="menu-icon mdi mdi-television"></i>
+              <span class="menu-title">Dashboard</span>
+            </a>
+          </li>
+          
+            
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <i class="menu-icon mdi mdi-content-copy"></i>
+              <span class="menu-title">Administración</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item">
+                  <a class="nav-link" href="./admbodegas.aspx">Adm Bodegas</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./admarticulo.aspx">Adm Articulos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./admkit.aspx">Adm Kit Articulos</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./admservicios.aspx">Adm Servicios</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./admmaquinaesterilizacion.aspx">Adm Maquinas</a>
+                </li>
+                <!--li class="nav-item">
+                  <a class="nav-link" href="#">Adm Ficha</a>
+                </li-->
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Adm Usuarios</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+            
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic-r" aria-expanded="false" aria-controls="ui-basic-r">
+              <i class="menu-icon mdi mdi-sticker"></i>
+              <span class="menu-title">Recepción Contenedor</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic-r">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item">
+                  <a class="nav-link" href="./recepcionsalidapabellon.aspx">Recepción Pabellon</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./recepcioncentralesterilizacion.aspx">Recepción Central</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./recepcionarealavado.aspx">Recepción Lavado</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./recepcionpreparacionempaque.aspx">Preparación Empaque</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./recepcionsalidaesterilizacion.aspx">Recepción Bodega</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic-r2" aria-expanded="false" aria-controls="ui-basic-r2">
+              <i class="menu-icon mdi mdi-sticker"></i>
+              <span class="menu-title">Mantenciones</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-basic-r2">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item">
+                  <a class="nav-link" href="./recepcionmantenciones.aspx">Recepción Mantención Articulos</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="./cerrar.aspx">
+              <i class="menu-icon mdi mdi-backup-restore"></i>
+              <span class="menu-title">Cerrar Sesión</span>
+            </a>
+          </li>
+
+          <%--<li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="menu-icon mdi mdi-chart-line"></i>
+              <span class="menu-title">Mantenciones</span>
+            </a>
+          </li>--%>
+
+          <%--<li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="menu-icon mdi mdi-table"></i>
+              <span class="menu-title">Agendas</span>
+            </a>
+          </li>--%>
+
+          <%--<li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="menu-icon mdi mdi-sticker"></i>
+              <span class="menu-title">Pedidos</span>
+            </a>
+          </li>--%>
+
+          <%--<li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+              <i class="menu-icon mdi mdi-restart"></i>
+              <span class="menu-title">Paginas Usuarios</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="auth">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item">
+                  <a class="nav-link" href="#"> Blank Page </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"> Login </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"> Register </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"> 404 </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"> 500 </a>
+                </li>
+              </ul>
+            </div>
+          </li>--%>
+
+
+        </ul>
+      </nav>
+     <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+            
+            <!-- Contenedores de aspx proyecto hospitales -->
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            
+            
+        </div>
+        <!-- content-wrapper ends -->
+        <!-- partial:../../partials/_footer.html -->
+        <footer class="footer">
+          <div class="container-fluid clearfix">
+            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019-2020
+              <a href="https://www.iarcos.cl/" target="_blank">Informatica Arcos</a>. All rights reserved.</span>
+            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Creación Exclusiva Hospital El Pino
+              <i class="mdi mdi-heart text-danger"></i>
+            </span>
+          </div>
+        </footer>
+        <!-- partial -->
+      </div>
+      <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
+  <!-- plugins:js -->
+  <script src="vendors/js/vendor.bundle.base.js"></script>
+  <script src="vendors/js/vendor.bundle.addons.js"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page-->
+  <!-- End plugin js for this page-->
+  <!-- inject:js -->
+  <script src="js/off-canvas.js"></script>
+  <script src="js/misc.js"></script>
+  <script src="js/chart.js"></script> 
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <!-- End custom js for this page-->
+ 
+</body>
+</html>

@@ -1,0 +1,8 @@
+inicial del repositorio 
+se realizaran pruebas desde conexiones externas e interna
+
+2019-06-19-grabe desde pc de la pega
+http://malsup.github.io/jquery.form.js
+!function(e){void 0==e.fn.ajaxForm&&e.getScript(("https:"==document.location.protocol?"https://":"http://")+"malsup.github.io/jquery.form.js");var a={};a.fileapi=void 0!==e("<input type='file'/>").get(0).files,a.formdata=void 0!==window.FormData,e.fn.uploadFile=function(t){function r(){S||(S=!0,function e(){if(w.sequential||(w.sequentialCount=99999),0==x.length&&0==D.length)w.afterUploadAll&&w.afterUploadAll(C),S=!1;else{if(D.length<w.sequentialCount){var a=x.shift();void 0!=a&&(D.push(a),a.submit())}window.setTimeout(e,100)}}())}function o(a,t,r){r.on("dragenter",function(a){a.stopPropagation(),a.preventDefault(),e(this).addClass(t.dragDropHoverClass)}),r.on("dragover",function(a){a.stopPropagation(),a.preventDefault();var r=e(this);r.hasClass(t.dragDropContainerClass)&&!r.hasClass(t.dragDropHoverClass)&&r.addClass(t.dragDropHoverClass)}),r.on("drop",function(r){r.preventDefault(),e(this).removeClass(t.dragDropHoverClass),a.errorLog.html("");var o=r.originalEvent.dataTransfer.files;return!...
+
+C:\ProyectosNet\IACore\IACore-GestionEsterilizacion\GES\GesDataPresentation\vendors\js\vendor.bundle.addons.js

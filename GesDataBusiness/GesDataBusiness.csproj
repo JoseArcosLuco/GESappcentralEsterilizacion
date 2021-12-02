@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AF48DCB7-2FF0-42B6-9352-7C53F531D30F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ges.data.business</RootNamespace>
+    <AssemblyName>ges.data.business</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GestorDataBusinessArticulo.cs" />
+    <Compile Include="GestorDataBusinessBodega.cs" />
+    <Compile Include="GestorDataBusinessKit.cs" />
+    <Compile Include="GestorDataBusinessKitArticulo.cs" />
+    <Compile Include="GestorDataBusinessMaquinaEsterilizacion.cs" />
+    <Compile Include="GestorDataBusinessMetodoEsterilizacion.cs" />
+    <Compile Include="GestorDataBusinessRecepcionLavado.cs" />
+    <Compile Include="GestorDataBusinessRecepcionPreparacionEmpaque.cs" />
+    <Compile Include="GestorDataBusinessRecepcionSalidaPabellon.cs" />
+    <Compile Include="GestorDataBusinessServicioClinicoArea.cs" />
+    <Compile Include="GestorDataBusinessServicioClinico.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GesDataAccess\GesDataAccess.csproj">
+      <Project>{e25d731b-31a0-4a9e-9611-f75c4d64c198}</Project>
+      <Name>GesDataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GesDataModel\GesDataModel.csproj">
+      <Project>{d0892cc8-dfe9-426b-b42c-0021514c201d}</Project>
+      <Name>GesDataModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
