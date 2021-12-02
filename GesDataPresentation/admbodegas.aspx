@@ -23,9 +23,8 @@
                 <div class="modal-dialog modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                             <h4 class="modal-title titulomodal" id="myModalLabel">Agregar Bodega</h4>
-                        </div>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>                        </div>
                         <div class="modal-body">
                             <div class="formulario">
                                 <form id="formularioAgregar" name="formularioAgregar" method="post" runat="server">
@@ -91,11 +90,9 @@
                                         <div class="col-md-8">
                                             <input runat="server" type="text" class="form-control" name="cmporden" id="cmporden" placeholder="Orden" maxlength="2" onkeypress="return soloNumeros(event)" />
                                         </div>
-                                    </div>
-                                    
+                                    </div> 
                                     <div class="row">
                                     </div>
-                                
                             </div>
                         </div>
                         <div class="modal-footer">
