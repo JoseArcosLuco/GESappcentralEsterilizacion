@@ -26,27 +26,21 @@
         <div class="col-md-6">
             <input runat="server" type="text" class="form-control" name="cmpcodigobusqueda" id="cmpcodigobusqueda" placeholder="Codigo Busqueda" maxlength="15" onkeypress="return soloLetrasVariado(event)" aria-required="True" required="required"  style="background-color:lavender;"/>
         </div>
-        <div class="col-md-4">
-            
-        </div>
+        <div class="col-md-4"></div>
     </div>
     <div class="row">
         <div class="col-md-4">
             <!--button type="button" class="btn btn-primary btn-fw" title="Buscar" data-toggle="modal" data-target="#modalAgregar">Buscar</button-->
             <asp:Button class="btn btn-primary btn-fw" ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" />
-                    
         </div>
     </div>
-    
     <div class="row">
-        
         <div class="col-md-8">
             Busqueda:
         </div>
         <div class="col-md-12">
             <p class='text-info'><asp:Label ID="datosSalida" runat="server" Text="Debe ingresar un codigo de contenedor para ingresar a lavado."></asp:Label> </p>               
         </div>
-            
         <div class="col-md-8">
             Articulos en Area Lavado
         </div>
@@ -54,6 +48,5 @@
             <asp:Label ID="datosEnBodega" runat="server" Text="---"></asp:Label>                
         </div>
     </div>
-                     
  </form>
 </asp:Content>

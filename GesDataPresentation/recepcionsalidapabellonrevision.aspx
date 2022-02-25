@@ -1,14 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Principal.Master" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="recepcionsalidapabellonrevision.aspx.cs" Inherits="ges.data.presentation.recepcionsalidapabellonrevision" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    
-        
     <script src="js/datatables/jquery-3.3.1.js"></script>
     <link href="./js/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
     <script src="./js/datatables/jquery.dataTables.min.js"></script>
     <script src="./js/datatables/dataTables.bootstrap4.min.js"></script>
     <link href="./js/datatables/bootstrap.css" rel="stylesheet" />
-
-    
     <script src="./js/ia.core.js"></script>
     <script src="./js/recepcioncontenedores/recepcionsalidapabellonrevision.js"></script>
 </asp:Content>
@@ -26,7 +22,6 @@
             <div class="col-md-12 text-left">
                 <h1 class="display-6">Recepción Salida Pabellon / Revisión</h1>
             </div>
-            
         </div>
         <div class="row">
             <div class="col-md-2">
@@ -54,8 +49,6 @@
             <div class="col-md-7">
                 <asp:Label ID="comboservicios" runat="server" Text="Servicios"></asp:Label>
             </div>
-            
-            
         </div>
         <div class="row">
             <div class="col-md-5 text-left">
@@ -65,7 +58,6 @@
             <div class="col-md-7">
                 <asp:Label ID="comboarea" runat="server" Text="" ></asp:Label>
             </div>
-            
         </div>
         <div class="row">
             <div class="col-md-5 text-left">
@@ -75,7 +67,6 @@
             <div class="col-md-7">
                 <input runat="server" type="text" class="form-control"  name="cmpnombrearsenalera" id="cmpnombrearsenalera" placeholder="Nombre Arsenalera" maxlength="150" onkeypress="return soloLetrasVariado(event)" aria-required="True" required="required"/>
             </div>
-            
         </div>
         <div class="row">
             <div class="col-md-5 text-left">
@@ -85,7 +76,6 @@
             <div class="col-md-7">
                 <input runat="server" type="text" class="form-control"  name="cmphoraterminocirugia" id="cmphoraterminocirugia" placeholder="Hora Término Cirugía" maxlength="150" onkeypress="return soloLetrasVariado(event)"/>
             </div>
-            
         </div>
         <div class="row">
             <div class="col-md-5 text-left">
@@ -95,10 +85,8 @@
             <div class="col-md-7">
                 <input runat="server" type="text" class="form-control"  name="cmpnombrecirugia" id="cmpnombrecirugia" placeholder="Nombre Cirugía" maxlength="150" onkeypress="return soloLetrasVariado(event)"/>
             </div>
-            
         </div>
         <div class="row">
-            
             <!--div class="col-md-12">
                 <div class="form-grup">
                      <div class="input-group">
@@ -111,7 +99,6 @@
                      </div>
                 </div>
             </div-->
-            
             <div class="col-md-5 text-left">
                 <span class="glyphicon glyphicon-asterisk red"></span>
                 <label for="cmpnombre">Nombre Paciente</label>
@@ -119,7 +106,6 @@
             <div class="col-md-7">
                 <input runat="server" type="text" class="form-control"  name="cmpnombrepaciente" id="cmpnombrepaciente" placeholder="Nombre Paciente" maxlength="150" onkeypress="return soloLetrasVariado(event)"/>
             </div>
-            
         </div>
         <div class="row">
             <div class="col-md-5 text-left">
@@ -129,7 +115,6 @@
             <div class="col-md-7">
                 <input runat="server" type="text" class="form-control"  name="cmpobs" id="cmpobs" placeholder="Observación Recepción" maxlength="150" onkeypress="return soloLetrasVariado(event)"/>
             </div>
-            
         </div>
         <div class="row">
             <div class="col-md-2">
@@ -143,15 +128,11 @@
             <div class="col-md-4 text-center">
                 &nbsp;
                 <input type ="button" value ="Volver" onclick="Volver()" class="btn btn-info btn-fw" />
-                
             </div>
             <div class="col-md-4 text-center">
-                
             </div>
         </div>
     </div>
-
-
     <div class="col-md-6 col-xs-12">
         <div class="row">
             <div class="col-md-12">
@@ -163,7 +144,6 @@
                 <asp:Label ID="lblTrazabilidad" runat="server" Text=""></asp:Label>
             </div>
         </div>
-
     </div>
 </div>
 </form>

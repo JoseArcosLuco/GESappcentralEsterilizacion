@@ -4,9 +4,6 @@
     <link href="js/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
     <script src="js/datatables/jquery.dataTables.min.js"></script>
     <script src="js/datatables/dataTables.bootstrap4.min.js"></script>
-    
-
-    
     <script src="./js/ia.core.js"></script>
     <script src="./js/recepcioncontenedores/recepcionarealavadorevision.js"></script>
 </asp:Content>
@@ -70,7 +67,6 @@
             <div class="col-md-7">
                 <input runat="server" type="text" class="form-control"  name="cmpcantmaterialalavar" id="cmpcantmaterialalavar" placeholder="Cantidad Material" maxlength="4" onkeypress="return soloNumeros(event)" />
             </div>
-            
         </div>
         <div class="row">
             <div class="col-md-5 text-left">
@@ -80,7 +76,6 @@
             <div class="col-md-7">
                 <input runat="server" type="text" class="form-control"  name="cmpchorroagua" id="cmpchorroagua" placeholder="Retiro Materia" maxlength="50" onkeypress="return soloLetrasVariado(event)"/>
             </div>
-            
         </div>
         <div class="row">
             <div class="col-md-5 text-left">
@@ -90,10 +85,8 @@
             <div class="col-md-7">
                 <input runat="server" type="text" class="form-control"  name="cmpdesarmepiezas" id="cmpdesarmepiezas" placeholder="Desarme de piezas ensambladas" maxlength="50" onkeypress="return soloLetrasVariado(event)"/>
             </div>
-            
         </div>
         <div class="row">
-            
             <div class="col-md-5 text-left">
                 <span class="glyphicon glyphicon-asterisk red"></span>
                 <label for="cmpnombre">Metodo Lavado</label>
@@ -101,7 +94,6 @@
             <div class="col-md-7">
                 <input runat="server" type="text" class="form-control"  name="cmpmetodolavado" id="cmpmetodolavado" placeholder="Metodo Lavado" maxlength="50" onkeypress="return soloLetrasVariado(event)"/>
             </div>
-            
         </div>
         <div class="row">
             <div class="col-md-5 text-left">
@@ -111,7 +103,6 @@
             <div class="col-md-7">
                 <input runat="server" type="text" class="form-control"  name="cmpcargadepiezas" id="cmpcargadepiezas" placeholder="Carga de piezas" maxlength="50" onkeypress="return soloLetrasVariado(event)"/>
             </div>
-            
         </div>
         <div class="row">
             <div class="col-md-5 text-left">
@@ -121,7 +112,6 @@
             <div class="col-md-7">
                 <input runat="server" type="text" class="form-control"  name="cmpnumerocarga" id="cmpnumerocarga" placeholder="Numero Carga" maxlength="9" onkeypress="return soloNumeros(event)"/>
             </div>
-            
         </div>
         <div class="row">
             <div class="col-md-5 text-left">
@@ -131,7 +121,6 @@
             <div class="col-md-7">
                 <input runat="server" type="text" class="form-control"  name="cmpobs" id="cmpobs" placeholder="Observaciones" maxlength="100" onkeypress="return soloLetrasVariado(event)"/>
             </div>
-            
         </div>
         <div class="row">
             <div class="col-md-2">
@@ -145,15 +134,11 @@
             <div class="col-md-4 text-center">
                 &nbsp;
                 <input type ="button" value ="Volver" onclick="Volver()" class="btn btn-info btn-fw" />
-                
             </div>
             <div class="col-md-4 text-center">
-                
             </div>
         </div>
     </div>
-
-
     <div class="col-md-6 col-xs-12">
         <div class="row">
             <div class="col-md-12">
@@ -165,9 +150,7 @@
                 <asp:Label ID="lblTrazabilidad" runat="server" Text=""></asp:Label>
             </div>
         </div>
-
     </div>
 </div>
 </form>
-
 </asp:Content>

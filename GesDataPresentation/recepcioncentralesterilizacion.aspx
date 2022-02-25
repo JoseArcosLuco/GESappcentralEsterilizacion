@@ -4,7 +4,7 @@
     <link href="./js/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
     <script src="./js/datatables/jquery.dataTables.min.js"></script>
     <script src="./js/datatables/dataTables.bootstrap4.min.js"></script>
-     <script src="./js/ia.core.js"></script>
+    <script src="./js/ia.core.js"></script>
     <script src="./js/recepcioncontenedores/recepcioncentralesterilizacion.js"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">

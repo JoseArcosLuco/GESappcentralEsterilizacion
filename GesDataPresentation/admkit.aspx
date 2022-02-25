@@ -49,9 +49,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                            <asp:Button ID="Button1" runat="server" Text="Grabar C#" class="btn btn-primary btn-fw" OnClick="Button1_Click"/>
-
-                            <!--button type="button" class="btn btn-primary" onclick="Grabar()">Grabar</!--button-->
+                            <asp:Button ID="Button1" runat="server" Text="Grabar" class="btn btn-primary btn-fw" OnClick="Button1_Click"/>
                         </div>
                         </form>
                     </div>
