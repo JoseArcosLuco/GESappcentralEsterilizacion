@@ -39,7 +39,7 @@ namespace ges.data.presentation
                 listaRecepcionSalidaPabellon obj = gb.Listar(idBodega,codigoTrazable);
                 if (obj.List.Count > 0)
                 {
-                    tbl.Append("<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" class=\"table\">");
+                    tbl.Append("<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" class=\"display\" width =\"100%\" id=\"datos\">");
                     tbl.Append("<thead><tr>");
                     tbl.Append("<th>Codigo</th>");
                     tbl.Append("<th>Nombre Articulo</th>");
@@ -66,24 +66,23 @@ namespace ges.data.presentation
                     foreach (RecepcionSalidaPabellon pdto in obj.List)
                     {
                         string identificador = pdto.codigoTrazable.ToString();
-                        string cadest = "Inactivo";
+                        string cadest = "Activar";
+                        string cadestDesc = "Desactivo";
                         string cadclass = "glyphicon-remove";
                         if (pdto.estado == 1)
                         {
-                            cadest = "Activo";
+                            cadest = "Desactivar";
+                            cadestDesc = "Activo";
                             cadclass = "glyphicon-ok";
                         }
                         tbl.Append("<tr id=\"fila" + identificador + "\">");
                         tbl.Append("<td>" + identificador + "</td>");
                         tbl.Append("<td>" + pdto.nombreArticulo.ToString() + "</td>");
-
                         tbl.Append("<td>" + pdto.cantidadRotacion.ToString() + "</td>");
                         tbl.Append("<td>" + pdto.fechaMantencion.ToString() + "</td>");
                         tbl.Append("<td>" + pdto.nombreBodega.ToString() + "</td>");
                         tbl.Append("<td>" + pdto.fechaAct.ToString() + "</td>");
-
-
-                        tbl.Append("<td id=\"valestado_" + identificador + "\" rel=\"" + pdto.estado + "\">" + cadest + "</td>");
+                        tbl.Append("<td id=\"valestado_" + identificador + "\" rel=\"" + pdto.estado + "\">" + cadestDesc + "</td>");
                         tbl.Append("<td class=\"text-right\">");
                         //tbl.Append("&nbsp;<button id=\"btncambiaestado_" + identificador + "\" type=\"button\" class=\"btn btn - secondary btn - fw\" runat=\"server\" OnClick=\"javascript:CambiarEstadoServicios(" + identificador + "," + pdto.estado.ToString() + ")\"><i class=\"mdi mdi-cloud-download\">" + cadest + "</i></button>");
                         tbl.Append("&nbsp;<button id=\"btnasignar_" + identificador + "\" type=\"button\" class=\"btn btn-success btn-fw\" runat=\"server\" OnClick=\"javascript:AsignarABodega('" + identificador + "','"+ pdto.nombreArticulo+ "' )\"><i class=\"mdi mdi-download\">Asignar a Bodega + Revision</i></button>");
@@ -119,8 +118,6 @@ namespace ges.data.presentation
                         string t2 = l.nombreArticulo.ToString();
                         string t3 = l.fechaAct.ToString();
                         string t4 = l.cantidadRotacion.ToString();
-                        
-
                         combo = combo + "<tr><td>" + t1 + "</td><td>" + t2 + "</td><td>" + t3 + "</td><td>" + t4 + "</td><td>-</td></tr>";
                     }
                 }
@@ -138,19 +135,14 @@ namespace ges.data.presentation
         {
             try
             {
-                
-
                 Int64 idBodegaEnvio = Convert.ToInt64(idBodega.Value);
                 string codigotrazableenvio = cmpcodigobusqueda.Value;
-
                 datosSalida.Text =  this.Listar(idBodegaEnvio, codigotrazableenvio);
-
                 if (datosSalida.Text == "")
                     datosSalida.Text = "0 Registros Encontrados!";
             }
             catch (Exception)
             {
-
                 throw;
             }
         }

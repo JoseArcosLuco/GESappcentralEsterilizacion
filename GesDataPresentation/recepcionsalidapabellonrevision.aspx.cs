@@ -23,7 +23,7 @@ namespace ges.data.presentation
             try
              {
                 
-                if (IsPostBack){
+                if (!IsPostBack){
                     cargaTraza();
                 }
                 idServicioRespaldo = idServicio.Value;

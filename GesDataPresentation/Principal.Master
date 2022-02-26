@@ -25,11 +25,11 @@
       <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
         <a class="navbar-brand brand-logo" href="default.aspx">
           <!--img src="./images/logo.svg" alt="logo" /-->
-          <img src="./images/LogoPng.Png" alt="logo" />
+          <img src="./images/logo.svg" alt="logo" />
         </a>
         <a class="navbar-brand brand-logo-mini" href="default.aspx">
           <!--img src="./images/logo-mini.svg" alt="logo" /-->
-          <img src="./images/LogoPng.Png" alt="logo" />
+          <img src="./images/logo.svg" alt="logo" />
         </a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">

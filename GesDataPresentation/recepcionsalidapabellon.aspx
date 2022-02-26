@@ -37,7 +37,7 @@
         <div class="col-md-12">
             <p class='text-info'><asp:Label ID="datosSalida" runat="server" Text="Debe ingresar un codigo de contenedor para gestionar."></asp:Label> </p>               
         </div>
-        <div class="col-md-8">
+        <div class="col-md-12">
             Articulos en Bodega
         </div>
         <div class="col-md-12">
