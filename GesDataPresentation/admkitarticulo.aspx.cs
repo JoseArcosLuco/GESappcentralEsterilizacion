@@ -33,6 +33,7 @@ namespace ges.data.presentation
             {
                 //AsignarKitArticulo(Convert.ToString(idKitArticulo.Value));
             }
+            comboArticulos.Text = CrearComboArticulos("cmpidarticulo", idArticulo.Value);
 
             datos.Text = Listar(Convert.ToInt32(idKit.Value));
         }
@@ -45,21 +46,26 @@ namespace ges.data.presentation
                 KitArticulo b = new KitArticulo();
                 Respuesta r = new Respuesta();
                 b.idKit = Convert.ToInt32(idKit.Value);
-                b.idArticulo = Convert.ToInt32(cmpidarticulo.Value);
+                b.idArticulo = Convert.ToInt32(idArticulo.Value);
                 b.cantidadArticulo = Convert.ToInt32(cmpcantidad.Value);
-                r = gb.Grabar(b);
-                if (r.estado == 0)
-                {
-                    Page.ClientScript.RegisterStartupScript(GetType(), "msgbox", "alert('Error:" + r.descripcion + "!');", true);
-                }else
-                {
-                    Page.ClientScript.RegisterStartupScript(GetType(), "msgbox", "alert(':) Ingresado Correctamente!');", true);
 
-                    cmpidarticulo.Value = "";
-                    cmpcantidad.Value = "";
+                if (b.idArticulo != 0 ) {
+
+                    r = gb.Grabar(b);
+
+                    if (r.estado == 0)
+                    {
+                        Page.ClientScript.RegisterStartupScript(GetType(), "msgbox", "alert('Error:" + r.descripcion + "!');", true);
+                    }
+                    else
+                    {
+                        Page.ClientScript.RegisterStartupScript(GetType(), "msgbox", "alert(':) Ingresado Correctamente!');", true);
+                        idArticulo.Value = "";
+                        cmpcantidad.Value = "";
+                    }
+
+                    datos.Text = Listar(Convert.ToInt32(idKit.Value));
                 }
-                
-                datos.Text = Listar(Convert.ToInt32(idKit.Value));
             }
             catch (Exception ex)
             {
@@ -67,7 +73,42 @@ namespace ges.data.presentation
                 throw;
             }
         }
+        public static string CrearComboArticulos(string nombrecampo, string idArticulo)
+        {
+            try
+            {
+                GestorDataBusinessArticulo gb = new GestorDataBusinessArticulo();
+                listaArticulo obj = gb.ListarArticulo();
+                string combo = "<select runat=\"server\" id=\"" + nombrecampo + "\" name=\"" + nombrecampo + "\" class=\"form-control\" onchange=\"CambioArticulo()\" aria-required=\"True\" required=\"required\" \"> ";
+                combo = combo + "<option value=\"\">Seleccione </option>";
+                if (obj.ListArticulo.Count() > 0)
+                {
 
+                    IEnumerable<Articulo> query = obj.ListArticulo.OrderBy(num => num.nombreArticulo);
+                    
+                    foreach (var l in query)
+                    {
+                        string t1 = l.idArticulo.ToString();
+                        string t2 = l.nombreArticulo.ToString();
+                        string selected = "selected";
+                        if (idArticulo == t1)
+                        {
+                            combo = combo + "<option value='" + t1 + "' " + selected + ">" + t2 + "</option>";
+                        }
+                        else
+                        {
+                            combo = combo + "<option value='" + t1 + "'>" + t2 + "</option>";
+                        }
+                    }
+                }
+                combo = combo + "</select>";
+                return combo;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
         public string Listar(Int32 id)
         {
             try

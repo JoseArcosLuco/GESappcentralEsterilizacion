@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ges.data.presentation {
-    
-    
-    public partial class admkitarticulo {
-        
+namespace ges.data.presentation
+{
+
+
+    public partial class admkitarticulo
+    {
+
         /// <summary>
         /// lblIdKit control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace ges.data.presentation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblIdKit;
-        
+
         /// <summary>
         /// lblNombreKit control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace ges.data.presentation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblNombreKit;
-        
+
         /// <summary>
         /// datos control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace ges.data.presentation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label datos;
-        
+
         /// <summary>
         /// formularioAgregar control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace ges.data.presentation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm formularioAgregar;
-        
+
         /// <summary>
         /// idKit control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace ges.data.presentation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField idKit;
-        
+
         /// <summary>
         /// nombreKit control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace ges.data.presentation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField nombreKit;
-        
+
         /// <summary>
         /// idKitArticulo control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace ges.data.presentation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField idKitArticulo;
-        
+
         /// <summary>
         /// estadoKitArticulo control.
         /// </summary>
@@ -83,7 +85,16 @@ namespace ges.data.presentation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField estadoKitArticulo;
-        
+
+        /// <summary>
+        /// idArticulo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField idArticulo;
+
         /// <summary>
         /// accionAProcesar control.
         /// </summary>
@@ -92,16 +103,16 @@ namespace ges.data.presentation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField accionAProcesar;
-        
+
         /// <summary>
-        /// cmpidarticulo control.
+        /// comboArticulos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText cmpidarticulo;
-        
+        protected global::System.Web.UI.WebControls.Label comboArticulos;
+
         /// <summary>
         /// cmpcantidad control.
         /// </summary>
@@ -110,7 +121,7 @@ namespace ges.data.presentation {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText cmpcantidad;
-        
+
         /// <summary>
         /// Button1 control.
         /// </summary>

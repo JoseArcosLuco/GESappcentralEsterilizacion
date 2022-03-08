@@ -39,6 +39,7 @@
                                     <asp:hiddenfield runat="server" id="nombreKit"></asp:hiddenfield>
                                     <asp:hiddenfield runat="server" id="idKitArticulo"></asp:hiddenfield>
                                     <asp:hiddenfield runat="server" id="estadoKitArticulo"></asp:hiddenfield>
+                                    <asp:hiddenfield runat="server" id="idArticulo"></asp:hiddenfield>
                                     <asp:hiddenfield runat="server" id="accionAProcesar"></asp:hiddenfield>
                                     <div class="row">
                                     </div>
@@ -48,7 +49,7 @@
                                             <label for="cmpnombre">Id Articulo</label>
                                         </div>
                                         <div class="col-md-8">
-                                            <input runat="server" type="text" class="form-control" name="cmpidarticulo" id="cmpidarticulo" placeholder="Id Articulo" maxlength="9" onkeypress="return soloNumeros(event)" aria-required="True" required="required"/>
+                                            <asp:Label ID="comboArticulos" runat="server" Text="Articulos"></asp:Label>
                                         </div>
                                     </div>
                                     <div class="row">
