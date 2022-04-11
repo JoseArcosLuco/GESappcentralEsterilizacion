@@ -140,7 +140,7 @@ namespace ges.data.presentation
             {
                 string combo = "";
                 combo = combo + "<table class=\"table table-striped table-bordered table-sm\"><tr>";
-                combo = combo + "<th>id</th><th>fecha</th><th>hora</th><th>nombre formulario</th><th>usuario</th><th>check</th></tr>";
+                combo = combo + "<th>Id</th><th>Fecha</th><th>Hora</th><th>Nombre Formulario</th><th>Usuario</th><th>Check</th></tr>";
                 if (result.List.Count() > 0)
                 {
                     foreach (var l in result.List)
