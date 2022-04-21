@@ -22,6 +22,12 @@ namespace ges.data.presentation
             {
                 EliminarServicio(Convert.ToString(idServicio.Value));
             }
+            /*
+            if (accionAProcesar.Value.Equals("AgregarPabellon"))
+            {
+                AgregarPabellon(Convert.ToString(idServicio.Value));
+            }
+            */
 
             datos.Text = Listar();
         }
@@ -98,6 +104,7 @@ namespace ges.data.presentation
 
                         tbl.Append("&nbsp;<button id=\"btncambiaestado_" + identificador + "\" type=\"button\" class=\"btn btn - secondary btn - fw\" runat=\"server\" OnClick=\"javascript:CambiarEstadoServicios(" + identificador + "," + pdto.estado.ToString() + ")\"><i class=\"mdi mdi-cloud-download\">" + cadest + "</i></button>");
                         tbl.Append("&nbsp;<button id=\"btneliminar_" + identificador + "\" type=\"button\" class=\"btn btn-danger btn-fw\" runat=\"server\" OnClick=\"javascript:EliminarServicios(" + identificador + ")\"><i class=\"mdi mdi-alert-outline\">Eliminar</i></button>");
+                        tbl.Append("&nbsp;<button id=\"btnpabellones_" + identificador + "\" type=\"button\" class=\"btn btn-success btn - fw\" runat=\"server\" OnClick=\"javascript:AgregarPabellones(" + identificador + ",'" + pdto.nombre.ToString() + "')\"><i class=\"mdi mdi-upload\">Agregar Pabellon</i></button>");
 
                         //tbl.Append(" &nbsp;<button type=\"button\" id=\"btnconfigura_" + identificador + "\" class=\"btn btn-info\" aria-label=\"Left Align\" title=\" Articulos que componen el Kit\" onclick=\"javascript:DynamicForm('mKitArticulo.aspx'," + identificador + ")\"><span class=\"glyphicon glyphicon-cog \" aria-hidden=\"true\"></span></button>");
                         //tbl.Append(" &nbsp;<button type=\"button\" id=\"btnasignacion_" + identificador + "\" class=\"btn btn-info\" aria-label=\"Left Align\" title=\"Asignacion de Contenedor \" onclick=\"javascript:DynamicForm('mKitAsignarContenedor.aspx'," + identificador + ")\"><span class=\"glyphicon glyphicon-tasks\" aria-hidden=\"true\"></span></button>");
@@ -164,5 +171,20 @@ namespace ges.data.presentation
                 throw;
             }
         }
+
+        /*
+        public void AgregarPabellon(string id)
+        {
+            try
+            {
+                HttpContext.Current.Response.Redirect("admpabellones.aspx?idServicio=" + id, true);
+            }
+            catch (Exception ex)
+            {
+                Page.ClientScript.RegisterStartupScript(GetType(), "msgbox", "alert('Error verifique:' " + ex.Message.ToString() + "); ", true);
+                throw;
+            }
+        }
+        */
     }
 }

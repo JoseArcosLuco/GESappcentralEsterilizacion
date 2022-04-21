@@ -15,36 +15,35 @@
 
 });
 
-function CambiarEstadoServicios(identificador, estado) {
-    $("input[id*='idServicio']").val(identificador);
-    $("input[id*='estadoServicio']").val(estado);
+function CambiarEstadoPabellon(identificador, estado) {
+    $("input[id*='idPabellon']").val(identificador);
+    $("input[id*='estadoPabellon']").val(estado);
     $("input[id*='accionAProcesar']").val("CambiarEstado");
+    //console.log(identificador);
+    //console.log(estado);
+    //console.log($("input[id*='accionAProcesar']").val());
+    document.getElementById("formularioAgregar").submit();
+}
+
+function EliminarPabellon(identificador) {
+
+    $("input[id*='idPabellon']").val(identificador);
+    $("input[id*='accionAProcesar']").val("EliminarPabellon");
 
     console.log(identificador);
-    console.log(estado);
     console.log($("input[id*='accionAProcesar']").val());
 
     document.getElementById("formularioAgregar").submit();
 }
 
-function EliminarServicios(identificador) {
-
-    $("input[id*='idServicio']").val(identificador);
-    $("input[id*='accionAProcesar']").val("EliminarServicio");
-
-    console.log(identificador);
-    console.log($("input[id*='accionAProcesar']").val());
+function CambioServicio() {
+    var codigoP = $("select[id*='cmpidservicio']").val();
+    $("input[id*='idServicio']").val(codigoP);
 
     document.getElementById("formularioAgregar").submit();
 }
 
-function AgregarPabellones(identificador, nombre) {
-    $("input[id*='idServicio']").val(identificador);
-    //$("input[id*='nombreServicio']").val(nombre);
-
-    console.log(identificador);
-    //console.log(nombre);
-
-    document.getElementById("formularioAgregar").action = "admpabellones.aspx";
-    document.getElementById("formularioAgregar").submit();
+function CambioServicioAgregar() {
+    var codigoP = $("select[id*='cmpidservicio']").val();
+    $("input[id*='idServicio']").val(codigoP);
 }

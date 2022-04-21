@@ -46,6 +46,7 @@
     <Compile Include="GestorDataBusinessKitArticulo.cs" />
     <Compile Include="GestorDataBusinessMaquinaEsterilizacion.cs" />
     <Compile Include="GestorDataBusinessMetodoEsterilizacion.cs" />
+    <Compile Include="GestorDataBusinessPabellones.cs" />
     <Compile Include="GestorDataBusinessRecepcionLavado.cs" />
     <Compile Include="GestorDataBusinessRecepcionPreparacionEmpaque.cs" />
     <Compile Include="GestorDataBusinessRecepcionSalidaPabellon.cs" />

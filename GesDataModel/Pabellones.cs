@@ -9,8 +9,8 @@ namespace ges.data.model
 {
     public class Pabellones
     {
-        public Int64 idPabellon { get; set; }
-        public Int64 idServicioClinicoArea { get; set; }
+        public Int32 idPabellon { get; set; }
+        public Int32 idServicioClinico { get; set; }
         public string nombre { get; set; }
         public string descripcion { get; set; }
         public string fechaReg { get; set; }
@@ -19,13 +19,13 @@ namespace ges.data.model
     }
     public partial class listaPabellones
     {
-        public BindingList<Pabellones> List = new BindingList<Pabellones>();
+        public BindingList<Pabellones> ListPabellones = new BindingList<Pabellones>();
         public listaPabellones()
         {
         }
         public void Add(Pabellones value)
         {
-            this.List.Add(value);
+            this.ListPabellones.Add(value);
         }
     }
 }
