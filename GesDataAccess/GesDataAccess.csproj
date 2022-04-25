@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GdaMetodoEsterilizacion.cs" />
+    <Compile Include="GestorDataAccessAgenda.cs" />
     <Compile Include="GestorDataAccessArticulo.cs" />
     <Compile Include="GestorDataAccessBodega.cs" />
     <Compile Include="GestorDataAccessCarro.cs" />

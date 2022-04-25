@@ -11,26 +11,8 @@ namespace ges.data.presentation
 {
 
 
-    public partial class admpabellones
+    public partial class solicitudagenda
     {
-
-        /// <summary>
-        /// Control comboServicios.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label comboServicios;
-
-        /// <summary>
-        /// Control datos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label datos;
 
         /// <summary>
         /// Control formularioAgregar.
@@ -42,6 +24,33 @@ namespace ges.data.presentation
         protected global::System.Web.UI.HtmlControls.HtmlForm formularioAgregar;
 
         /// <summary>
+        /// Control idUsuario.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField idUsuario;
+
+        /// <summary>
+        /// Control idUsuaruioProfesional.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField idUsuaruioProfesional;
+
+        /// <summary>
+        /// Control idUsuarioPaciente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField idUsuarioPaciente;
+
+        /// <summary>
         /// Control idServicio.
         /// </summary>
         /// <remarks>
@@ -51,31 +60,13 @@ namespace ges.data.presentation
         protected global::System.Web.UI.WebControls.HiddenField idServicio;
 
         /// <summary>
-        /// Control nombreServicio.
+        /// Control idArea.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField nombreServicio;
-
-        /// <summary>
-        /// Control idPabellon.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField idPabellon;
-
-        /// <summary>
-        /// Control estadoPabellon.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField estadoPabellon;
+        protected global::System.Web.UI.WebControls.HiddenField idArea;
 
         /// <summary>
         /// Control accionAProcesar.
@@ -87,22 +78,22 @@ namespace ges.data.presentation
         protected global::System.Web.UI.WebControls.HiddenField accionAProcesar;
 
         /// <summary>
-        /// Control comboServiciosAgregar.
+        /// Control comboServicios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label comboServiciosAgregar;
+        protected global::System.Web.UI.WebControls.Label comboServicios;
 
         /// <summary>
-        /// Control cmpnombre.
+        /// Control cmpasunto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText cmpnombre;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText cmpasunto;
 
         /// <summary>
         /// Control cmpdescripcion.
@@ -112,6 +103,24 @@ namespace ges.data.presentation
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText cmpdescripcion;
+
+        /// <summary>
+        /// Control cmpfecha.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl cmpfecha;
+
+        /// <summary>
+        /// Control cmphora.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl cmphora;
 
         /// <summary>
         /// Control Button1.

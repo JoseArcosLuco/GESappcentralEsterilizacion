@@ -63,13 +63,13 @@
                                             <label for="cmpnombre">Descripción</label>
                                         </div>
                                         <div class="col-md-8">
-                                            <input runat="server" type="text" class="form-control" name="cmpdescripcion" id="cmpdescripcion" placeholder="Descripción" maxlength="150" onkeypress="return soloLetrasVariado(event)" aria-required="True" required="required"/>
+                                            <input runat="server" type="text" class="form-control" name="cmpdescripcion" id="cmpdescripcion" placeholder="Descripción" maxlength="500" onkeypress="return soloLetrasVariado(event)" aria-required="True" required="required"/>
                                         </div>
                                     </div>
                                     <div class="row"></div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                        <asp:Button ID="Button2" runat="server" Text="Grabar" class="btn btn-primary btn-fw" OnClick="Button1_Click"/>
+                                        <asp:Button ID="Button1" runat="server" Text="Grabar" class="btn btn-primary btn-fw" OnClick="Button1_Click"/>
                                     </div>
                                 </form>
                             </div>

@@ -218,7 +218,7 @@
                   </div>
                 </div>
               </div>
-              <button class="btn btn-success btn-block">Nueva Solicitud
+              <button class="btn btn-success btn-block" onclick="window.location.href='./solicitudagenda.aspx';">Nueva Solicitud
                 <i class="mdi mdi-plus"></i>
               </button>
             </div>
