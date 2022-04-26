@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ges.data.access</RootNamespace>
     <AssemblyName>ges.data.access</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,12 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GdaMetodoEsterilizacion.cs" />
+    <Compile Include="GestorDataAccessAgenda.cs" />
     <Compile Include="GestorDataAccessArticulo.cs" />
     <Compile Include="GestorDataAccessBodega.cs" />
+    <Compile Include="GestorDataAccessCarro.cs" />
     <Compile Include="GestorDataAccessKit.cs" />
     <Compile Include="GestorDataAccessKitArticulo.cs" />
     <Compile Include="GestorDataAccessMaquinaEsterilizacion.cs" />
     <Compile Include="GestorDataAccessMetodoEsterilizacion.cs" />
+    <Compile Include="GestorDataAccessPabellones.cs" />
     <Compile Include="GestorDataAccessRecepcionLavado.cs" />
     <Compile Include="GestorDataAccessRecepcionPreparacionEmpaque.cs" />
     <Compile Include="GestorDataAccessRecepcionSalidaPabellon.cs" />

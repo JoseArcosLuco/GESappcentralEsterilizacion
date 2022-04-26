@@ -11,26 +11,17 @@ namespace ges.data.presentation
 {
 
 
-    public partial class admkitarticulo
+    public partial class admpabellones
     {
 
         /// <summary>
-        /// Control lblIdKit.
+        /// Control comboServicios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIdKit;
-
-        /// <summary>
-        /// Control lblNombreKit.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombreKit;
+        protected global::System.Web.UI.WebControls.Label comboServicios;
 
         /// <summary>
         /// Control datos.
@@ -51,49 +42,40 @@ namespace ges.data.presentation
         protected global::System.Web.UI.HtmlControls.HtmlForm formularioAgregar;
 
         /// <summary>
-        /// Control idKit.
+        /// Control idServicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField idKit;
+        protected global::System.Web.UI.WebControls.HiddenField idServicio;
 
         /// <summary>
-        /// Control nombreKit.
+        /// Control nombreServicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField nombreKit;
+        protected global::System.Web.UI.WebControls.HiddenField nombreServicio;
 
         /// <summary>
-        /// Control idKitArticulo.
+        /// Control idPabellon.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField idKitArticulo;
+        protected global::System.Web.UI.WebControls.HiddenField idPabellon;
 
         /// <summary>
-        /// Control estadoKitArticulo.
+        /// Control estadoPabellon.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField estadoKitArticulo;
-
-        /// <summary>
-        /// Control idArticulo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField idArticulo;
+        protected global::System.Web.UI.WebControls.HiddenField estadoPabellon;
 
         /// <summary>
         /// Control accionAProcesar.
@@ -105,22 +87,31 @@ namespace ges.data.presentation
         protected global::System.Web.UI.WebControls.HiddenField accionAProcesar;
 
         /// <summary>
-        /// Control comboArticulos.
+        /// Control comboServiciosAgregar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label comboArticulos;
+        protected global::System.Web.UI.WebControls.Label comboServiciosAgregar;
 
         /// <summary>
-        /// Control cmpcantidad.
+        /// Control cmpnombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText cmpcantidad;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText cmpnombre;
+
+        /// <summary>
+        /// Control cmpdescripcion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText cmpdescripcion;
 
         /// <summary>
         /// Control Button1.

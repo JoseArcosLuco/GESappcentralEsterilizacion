@@ -11,35 +11,8 @@ namespace ges.data.presentation
 {
 
 
-    public partial class admkitarticulo
+    public partial class solicitudagenda
     {
-
-        /// <summary>
-        /// Control lblIdKit.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIdKit;
-
-        /// <summary>
-        /// Control lblNombreKit.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombreKit;
-
-        /// <summary>
-        /// Control datos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label datos;
 
         /// <summary>
         /// Control formularioAgregar.
@@ -51,49 +24,49 @@ namespace ges.data.presentation
         protected global::System.Web.UI.HtmlControls.HtmlForm formularioAgregar;
 
         /// <summary>
-        /// Control idKit.
+        /// Control idUsuario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField idKit;
+        protected global::System.Web.UI.WebControls.HiddenField idUsuario;
 
         /// <summary>
-        /// Control nombreKit.
+        /// Control idUsuaruioProfesional.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField nombreKit;
+        protected global::System.Web.UI.WebControls.HiddenField idUsuaruioProfesional;
 
         /// <summary>
-        /// Control idKitArticulo.
+        /// Control idUsuarioPaciente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField idKitArticulo;
+        protected global::System.Web.UI.WebControls.HiddenField idUsuarioPaciente;
 
         /// <summary>
-        /// Control estadoKitArticulo.
+        /// Control idServicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField estadoKitArticulo;
+        protected global::System.Web.UI.WebControls.HiddenField idServicio;
 
         /// <summary>
-        /// Control idArticulo.
+        /// Control idArea.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField idArticulo;
+        protected global::System.Web.UI.WebControls.HiddenField idArea;
 
         /// <summary>
         /// Control accionAProcesar.
@@ -105,22 +78,49 @@ namespace ges.data.presentation
         protected global::System.Web.UI.WebControls.HiddenField accionAProcesar;
 
         /// <summary>
-        /// Control comboArticulos.
+        /// Control comboServicios.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label comboArticulos;
+        protected global::System.Web.UI.WebControls.Label comboServicios;
 
         /// <summary>
-        /// Control cmpcantidad.
+        /// Control cmpasunto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText cmpcantidad;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText cmpasunto;
+
+        /// <summary>
+        /// Control cmpdescripcion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText cmpdescripcion;
+
+        /// <summary>
+        /// Control cmpfecha.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl cmpfecha;
+
+        /// <summary>
+        /// Control cmphora.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl cmphora;
 
         /// <summary>
         /// Control Button1.

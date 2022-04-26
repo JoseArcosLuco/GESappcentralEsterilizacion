@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ges.data.business</RootNamespace>
     <AssemblyName>ges.data.business</AssemblyName>
-    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -39,12 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GestorDataBusinessAgenda.cs" />
     <Compile Include="GestorDataBusinessArticulo.cs" />
     <Compile Include="GestorDataBusinessBodega.cs" />
     <Compile Include="GestorDataBusinessKit.cs" />
     <Compile Include="GestorDataBusinessKitArticulo.cs" />
     <Compile Include="GestorDataBusinessMaquinaEsterilizacion.cs" />
     <Compile Include="GestorDataBusinessMetodoEsterilizacion.cs" />
+    <Compile Include="GestorDataBusinessPabellones.cs" />
     <Compile Include="GestorDataBusinessRecepcionLavado.cs" />
     <Compile Include="GestorDataBusinessRecepcionPreparacionEmpaque.cs" />
     <Compile Include="GestorDataBusinessRecepcionSalidaPabellon.cs" />
