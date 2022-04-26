@@ -88,6 +88,7 @@
     <Content Include="js\mantenedores\admmetodoesterilizacion.js" />
     <Content Include="js\mantenedores\admpabellones.js" />
     <Content Include="js\mantenedores\admservicios.js" />
+    <Content Include="js\mantenedores\solicitudagenda.js" />
     <Content Include="js\recepcioncontenedores\recepcionarealavado.js" />
     <Content Include="js\recepcioncontenedores\recepcionarealavadorevision.js" />
     <Content Include="js\recepcioncontenedores\recepcioncentralesterilizacion.js" />
@@ -109,6 +110,7 @@
     <Content Include="recepcionsalidaesterilizacion.aspx" />
     <Content Include="recepcionsalidapabellon.aspx" />
     <Content Include="recepcionsalidapabellonrevision.aspx" />
+    <Content Include="solicitudagenda.aspx" />
     <Content Include="vendors\iconfonts\flag-icon-css\assets\docs.less" />
     <Content Include="vendors\iconfonts\flag-icon-css\bower.json" />
     <Content Include="vendors\iconfonts\flag-icon-css\composer.json" />
@@ -2228,6 +2230,13 @@
     </Compile>
     <Compile Include="recepcionsalidapabellonrevision.aspx.designer.cs">
       <DependentUpon>recepcionsalidapabellonrevision.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="solicitudagenda.aspx.cs">
+      <DependentUpon>solicitudagenda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="solicitudagenda.aspx.designer.cs">
+      <DependentUpon>solicitudagenda.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

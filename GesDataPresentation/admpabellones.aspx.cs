@@ -26,13 +26,13 @@ namespace ges.data.presentation
             //datos.Text = Listar(Convert.ToInt32(HttpContext.Current.Request.QueryString["idServicio"].ToString()));
 
             comboServicios.Text = CrearComboServicios("cmpidservicio", idServicio.Value, true);
-            comboServiciosAgregar.Text = CrearComboServicios("cmpidservicio", idServicio.Value, false);
+            comboServiciosAgregar.Text = CrearComboServicios("cmpidservicioAgregar", idServicio.Value, false);
 
-            //De actualizar la pagina con un idServicio, genera la lista con los pabellones de ese servicio, de enviar -1 lista todos los elementos
+            //De actualizar la pagina con un idServicio, genera la lista con los pabellones de ese servicio, de enviar 0 lista ningun elemento
             if (idServicio.Value != "") { 
                 datos.Text = Listar(Convert.ToInt32(idServicio.Value)); }
             else{ 
-                datos.Text = Listar(-1); }
+                datos.Text = Listar(0); }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -54,16 +54,17 @@ namespace ges.data.presentation
                     if (r.estado == 0)
                     {
                         Page.ClientScript.RegisterStartupScript(GetType(), "msgbox", "alert('Error:" + r.descripcion + "!');", true);
+                        cmpnombre.Value = "";
+                        cmpdescripcion.Value = "";
                     }
                     else
                     {
                         Page.ClientScript.RegisterStartupScript(GetType(), "msgbox", "alert(':) Ingresado Correctamente!');", true);
-                        idServicio.Value = "";
                         cmpnombre.Value = "";
                         cmpdescripcion.Value = "";
                     }
 
-                    datos.Text = Listar(0);
+                    datos.Text = Listar(Convert.ToInt32(idServicio.Value));
                 }
             }
             catch (Exception ex)
@@ -72,8 +73,13 @@ namespace ges.data.presentation
             }
 
         }
+        protected void Buscar_Click(object sender, EventArgs e)
+        {
+            datos.Text = Listar(Convert.ToInt32(idServicio.Value));
 
-        public static string CrearComboServicios(string nombrecampo, string idServicio, bool opcion)
+        }
+
+        public static string CrearComboServicios(string nombrecampo, string idServicio, bool lista)
         {
             try
             {
@@ -81,8 +87,8 @@ namespace ges.data.presentation
                 listaServicioClinico obj = gb.ListarServicioClinico();
                 string combo;
 
-                if (opcion) {
-                    combo = "<select runat=\"server\" id=\"" + nombrecampo + "\" name=\"" + nombrecampo + "\" class=\"form-control\" onchange=\"CambioServicio()\" aria-required=\"True\" required=\"required\" \"> "; }
+                if (lista) {
+                    combo = "<select runat=\"server\" id=\"" + nombrecampo + "\" name=\"" + nombrecampo + "\" class=\"form-control\" aria-required=\"True\" required=\"required\" \"> "; }
                 else{ 
                     combo = "<select runat=\"server\" id=\"" + nombrecampo + "\" name=\"" + nombrecampo + "\" class=\"form-control\" onchange=\"CambioServicioAgregar()\" aria-required=\"True\" required=\"required\" \"> "; }
 
@@ -97,7 +103,7 @@ namespace ges.data.presentation
                         string t1 = l.idServicioClinico.ToString();
                         string t2 = l.nombre.ToString();
                         string selected = "selected";
-                        if (idServicio == t1)
+                        if (idServicio == t1 && lista)
                         {
                             combo = combo + "<option value='" + t1 + "' " + selected + ">" + t2 + "</option>";
                         }
@@ -128,6 +134,7 @@ namespace ges.data.presentation
                     tbl.Append("<table cellpadding=\"0\" cellspacing=\"0\" border=\"0\" class=\"display\" width =\"100%\" id=\"datos\">");
                     tbl.Append("<thead><tr>");
                     tbl.Append("<th>Codigo</th>");
+                    tbl.Append("<th>Servicio</th>");
                     tbl.Append("<th>Nombre</th>");
                     tbl.Append("<th>Descripción</th>");
                     tbl.Append("<th>Estado</th>");
@@ -135,6 +142,7 @@ namespace ges.data.presentation
                     tbl.Append("</thead>");
                     tbl.Append("<tfoot><tr>");
                     tbl.Append("<th>Codigo</th>");
+                    tbl.Append("<th>Servicio</th>");
                     tbl.Append("<th>Nombre</th>");
                     tbl.Append("<th>Descripción</th>");
                     tbl.Append("<th>Estado</th>");
@@ -155,10 +163,11 @@ namespace ges.data.presentation
                             cadestDesc = "Activo";
                             cadclass = "glyphicon-ok";
                         }
-                        if (id == -1 || pdto.idServicioClinico == id )
+                        if (pdto.idServicioClinico == id )
                         {
                             tbl.Append("<tr id=\"fila" + identificador + "\">");
                             tbl.Append("<td>" + identificador + "</td>");
+                            tbl.Append("<td>" + pdto.nombreServicio.ToString() + "</td>");
                             tbl.Append("<td>" + pdto.nombre.ToString() + "</td>");
                             tbl.Append("<td>" + pdto.descripcion.ToString() + "</td>");
                             tbl.Append("<td id=\"valestado_" + identificador + "\" rel=\"" + pdto.estado + "\">" + cadestDesc + "</td>");
