@@ -1,0 +1,65 @@
+USE [iaCore_GestionEsterilizacion]
+GO
+
+ALTER TABLE agenda ALTER COLUMN FECHAAGENDA DATE NULL
+
+ALTER TABLE agenda ALTER COLUMN HORAAGENDA TIME(0) NULL
+
+ALTER TABLE dbo.agenda DROP COLUMN IDSERVICIOCLINICO;
+
+ALTER TABLE dbo.agenda ADD IDPABELLON INT NULL;
+
+
+ALTER PROCEDURE [dbo].[AgregarAgenda] 
+	@idUsuario Numeric(18,0),
+	@idPabellon Numeric(18,0),
+	@asunto varchar(120),
+	@descripcion varchar(255),
+	@fechaAgenda date,
+	@horaAgenda time(0)
+As
+BEGIN
+	SET NOCOUNT ON;
+	BEGIN TRY 	
+		IF not exists(SELECT 1 FROM agenda WHERE IDPABELLON = @idPabellon and FECHAACT = @fechaAgenda and HORAAGENDA = @horaAgenda and estado in (0,1)) 
+		BEGIN
+			INSERT INTO agenda(IDUSUARIO,IDPABELLON,ASUNTO,DESCRIPCION,FECHAAGENDA,HORAAGENDA,FECHAREG,FECHAACT,ESTADO) 
+			VALUES (@idUsuario,@idPabellon,@asunto,@descripcion,@fechaAgenda,@horaAgenda,getdate(),getdate(),1);
+			SELECT 1 AS estadoSp, @@identity AS mensajeSp;
+		END
+		ELSE
+		BEGIN
+			SELECT 0 AS estadoSp, 'Agenda ingresada ya se encuentra registrada' AS mensajeSp;
+		END
+	END TRY
+	BEGIN CATCH  
+		SELECT	error_number() as estadosp,
+		error_message() as mensajesp;  
+	END CATCH;     
+END
+
+
+ALTER PROCEDURE [dbo].[cruListarPabellones] 
+AS
+BEGIN
+	SET NOCOUNT ON;
+	BEGIN TRY
+		SELECT	pabellones.idPabellon,
+			pabellones.idServicioClinicoArea,
+			pabellones.nombre,
+			servicioClinico.NOMBRESERVICIO,
+			pabellones.descripcion,
+			pabellones.fechaReg,
+			pabellones.fechaAct,
+			pabellones.estado
+		FROM dbo.pabellones
+		INNER JOIN dbo.servicioClinico
+		ON pabellones.idServicioClinicoArea = servicioClinico.IDSERVICIOCLINICO
+		WHERE pabellones.estado in (0,1) and servicioClinico.ESTADO in (0,1)
+		ORDER BY pabellones.idPabellon;	
+	END TRY
+	BEGIN CATCH
+		SELECT ERROR_NUMBER() AS estadosp,
+		ERROR_MESSAGE() AS mensajesp
+	END CATCH;    
+END

@@ -69,6 +69,15 @@ namespace ges.data.presentation
         protected global::System.Web.UI.WebControls.HiddenField idArea;
 
         /// <summary>
+        /// Control idPabellon.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField idPabellon;
+
+        /// <summary>
         /// Control accionAProcesar.
         /// </summary>
         /// <remarks>
@@ -85,6 +94,15 @@ namespace ges.data.presentation
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label comboServicios;
+
+        /// <summary>
+        /// Control comboPabellon.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label comboPabellon;
 
         /// <summary>
         /// Control cmpasunto.
