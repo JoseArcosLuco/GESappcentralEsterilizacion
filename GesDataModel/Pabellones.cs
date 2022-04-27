@@ -12,6 +12,7 @@ namespace ges.data.model
         public Int32 idPabellon { get; set; }
         public Int32 idServicioClinico { get; set; }
         public string nombre { get; set; }
+        public string nombreServicio { get; set; }
         public string descripcion { get; set; }
         public string fechaReg { get; set; }
         public string fechaAct { get; set; }

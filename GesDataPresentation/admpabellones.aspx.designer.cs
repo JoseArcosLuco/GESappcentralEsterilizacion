@@ -24,6 +24,15 @@ namespace ges.data.presentation
         protected global::System.Web.UI.WebControls.Label comboServicios;
 
         /// <summary>
+        /// Control buttonBuscar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton buttonBuscar;
+
+        /// <summary>
         /// Control datos.
         /// </summary>
         /// <remarks>

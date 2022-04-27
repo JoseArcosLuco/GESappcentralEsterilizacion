@@ -40,6 +40,7 @@ namespace ges.data.access
                         obj.idPabellon = Convert.ToInt32(dt.Rows[i]["idPabellon"]);
                         obj.idServicioClinico = Convert.ToInt32(dt.Rows[i]["idServicioClinicoArea"]);
                         obj.nombre = dt.Rows[i]["nombre"].ToString();
+                        obj.nombreServicio = dt.Rows[i]["NOMBRESERVICIO"].ToString();
                         obj.descripcion = dt.Rows[i]["descripcion"].ToString();
                         obj.fechaReg = dt.Rows[i]["fechaReg"].ToString();
                         obj.fechaAct = dt.Rows[i]["fechaAct"].ToString();

@@ -1,0 +1,28 @@
+USE [iaCore_GestionEsterilizacion]
+GO
+
+
+ALTER PROCEDURE [dbo].[cruListarPabellones] 
+AS
+BEGIN
+	SET NOCOUNT ON;
+	BEGIN TRY
+		SELECT	pabellones.idPabellon,
+			pabellones.idServicioClinicoArea,
+			pabellones.nombre,
+			servicioClinico.NOMBRESERVICIO,
+			pabellones.descripcion,
+			pabellones.fechaReg,
+			pabellones.fechaAct,
+			pabellones.estado
+		FROM dbo.pabellones
+		INNER JOIN dbo.servicioClinico
+		ON pabellones.idServicioClinicoArea = servicioClinico.IDSERVICIOCLINICO
+		WHERE pabellones.estado in (0,1)
+		ORDER BY pabellones.idPabellon;	
+	END TRY
+	BEGIN CATCH
+		SELECT ERROR_NUMBER() AS estadosp,
+		ERROR_MESSAGE() AS mensajesp
+	END CATCH;    
+END

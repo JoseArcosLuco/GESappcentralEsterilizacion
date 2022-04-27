@@ -44,6 +44,6 @@ function CambioServicio() {
 }
 
 function CambioServicioAgregar() {
-    var codigoP = $("select[id*='cmpidservicio']").val();
+    var codigoP = $("select[id*='cmpidservicioAgregar']").val();
     $("input[id*='idServicio']").val(codigoP);
 }

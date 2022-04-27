@@ -11,13 +11,16 @@
     <h1 class="display-2">Mantenedor Pabellón</h1>
 
     <button type="button" class="btn btn-primary btn-fw" title="Agregar Nuevo Pabellon" data-toggle="modal" data-target="#modalAgregar">Agregar</button>
-    <button type="button" class="btn btn-primary btn-fw" title="Volver" onclick="javascript:DynamicForm('admservicios.aspx');"><i class="mdi mdi-home-outline">Volver</i></button>
+    <button type="button" class="btn btn-primary btn-fw" title="Ir a Servicios" onclick="javascript:DynamicForm('admservicios.aspx');">Ir a Servicios</button>
     
     <br /><br />
     <div class="row">
         <div class="col-md-2 display-4">Servicios:</div>
-        <div class="col-md-10">
+        <div class="col-md-4">
             <asp:Label ID="comboServicios" runat="server" class="display-4" Text="Servicios"></asp:Label>
+        </div>
+        <div>
+            <button id="buttonBuscar" type="button" runat="server" class="btn btn-primary btn-fw" onclick="javascript:CambioServicio()">Buscar</button>
         </div>
     </div>
 
@@ -69,7 +72,7 @@
                                     <div class="row"></div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                                        <asp:Button ID="Button1" runat="server" Text="Grabar" class="btn btn-primary btn-fw" OnClick="Button1_Click"/>
+                                        <asp:button id="Button1" runat="server" text="Grabar" class="btn btn-primary btn-fw" onclick="Button1_Click"/>
                                     </div>
                                 </form>
                             </div>
