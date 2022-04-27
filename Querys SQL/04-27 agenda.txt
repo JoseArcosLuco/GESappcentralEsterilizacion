@@ -23,8 +23,8 @@ BEGIN
 	BEGIN TRY 	
 		IF not exists(SELECT 1 FROM agenda WHERE IDPABELLON = @idPabellon and FECHAACT = @fechaAgenda and HORAAGENDA = @horaAgenda and estado in (0,1)) 
 		BEGIN
-			INSERT INTO agenda(IDPABELLON,ASUNTO,DESCRIPCION,FECHAAGENDA,HORAAGENDA,FECHAREG,FECHAACT,ESTADO) 
-			VALUES (@idPabellon,@asunto,@descripcion,@fechaAgenda,@horaAgenda,getdate(),getdate(),1);
+			INSERT INTO agenda(IDUSUARIO,IDPABELLON,ASUNTO,DESCRIPCION,FECHAAGENDA,HORAAGENDA,FECHAREG,FECHAACT,ESTADO) 
+			VALUES (@idUsuario,@idPabellon,@asunto,@descripcion,@fechaAgenda,@horaAgenda,getdate(),getdate(),1);
 			SELECT 1 AS estadoSp, @@identity AS mensajeSp;
 		END
 		ELSE
