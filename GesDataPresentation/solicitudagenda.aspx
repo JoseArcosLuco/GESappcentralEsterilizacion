@@ -16,6 +16,7 @@
             <asp:hiddenfield runat="server" id="idUsuarioPaciente"></asp:hiddenfield>
             <asp:hiddenfield runat="server" id="idServicio"></asp:hiddenfield>
             <asp:hiddenfield runat="server" id="idArea"></asp:hiddenfield>
+            <asp:hiddenfield runat="server" id="idPabellon"></asp:hiddenfield>
             <asp:hiddenfield runat="server" id="accionAProcesar"></asp:hiddenfield>
             <div class="row">
                 <div class="col-md-2 text-left">
@@ -26,6 +27,19 @@
                     <asp:Label ID="comboServicios" runat="server" Text="Servicios"></asp:Label>
                 </div>
             </div>
+            <br />
+            <div class="row">
+                <div class="col-md-2 text-left">
+                    <span class="glyphicon glyphicon-asterisk red"></span>
+                    <label for="cmppabellon">Pabellón</label>
+                </div>
+                <div class="col-md-8">
+                    <asp:Label ID="comboPabellon" runat="server" Text="">
+                        <select runat="server" class="form-control" aria-required="True" required="required"><option value="">Seleccione</option></select>
+                    </asp:Label>
+                </div>
+            </div>
+            <br />
             <div class="row">
                 <div class="col-md-2 text-left">
                     <span class="glyphicon glyphicon-asterisk red"></span>
@@ -35,6 +49,7 @@
                     <input runat="server" type="text" class="form-control" name="cmpasunto" id="cmpasunto" placeholder="Asunto" maxlength="120" onkeypress="return soloLetrasVariado(event)" aria-required="True" required="required"/>
                 </div>
             </div>
+            <br />
             <div class="row">
                 <div class="col-md-2 text-left">
                     <span class="glyphicon glyphicon-asterisk red"></span>
@@ -44,6 +59,7 @@
                     <input runat="server" type="text" class="form-control" name="cmpdescripcion" id="cmpdescripcion" placeholder="Descripción" maxlength="255" onkeypress="return soloLetrasVariado(event)" aria-required="True" required="required"/>
                 </div>
             </div>
+            <br />
             <div class="row">
                 <div class="col-md-2 text-left">
                     <span class="glyphicon glyphicon-asterisk red"></span>
@@ -53,6 +69,7 @@
                     <input runat="server" type="date" class="form-control" name="cmpfecha" id="cmpfecha" placeholder="Fecha" min="" onkeypress="return soloFecha(event)" aria-required="True" required="required"/>
                 </div>
             </div>
+            <br />
             <div class="row">
                 <div class="col-md-2 text-left">
                     <span class="glyphicon glyphicon-asterisk red"></span>

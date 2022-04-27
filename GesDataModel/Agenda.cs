@@ -14,7 +14,7 @@ namespace ges.data.model
         public int idUsuarioProfesional { get; set; }
         public int idUsuarioPaciente { get; set; }
         public int idAgendaConfiguracion { get; set; }
-        public int idServicioClinico { get; set; }
+        public int idPabellon { get; set; }
         public int idArea { get; set; }
         public string asunto { get; set; }
         public string descripcion { get; set; }

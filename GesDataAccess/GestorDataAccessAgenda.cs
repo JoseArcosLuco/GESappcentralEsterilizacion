@@ -28,13 +28,14 @@ namespace ges.data.access
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     /*
-                    cmd.Parameters.AddWithValue("@idUsuario", a.idUsuario);
+                    cmd.Parameters.AddWithValue("@idServicioClinico", a.idServicioClinico);
                     cmd.Parameters.AddWithValue("@idUsuarioPaciente", a.idUsuarioPaciente);
                     cmd.Parameters.AddWithValue("@idUsuarioProfesional", a.idUsuarioProfesional);
                     cmd.Parameters.AddWithValue("@idAgendaConfiguracion", a.idAgendaConfiguracion);
                     cmd.Parameters.AddWithValue("@idArea", a.idArea);
                     */
-                    cmd.Parameters.AddWithValue("@idServicioClinico", a.idServicioClinico);
+                    cmd.Parameters.AddWithValue("@idUsuario", a.idUsuario);
+                    cmd.Parameters.AddWithValue("@idPabellon", a.idPabellon);
                     cmd.Parameters.AddWithValue("@asunto", a.asunto);
                     cmd.Parameters.AddWithValue("@descripcion", a.descripcion);
                     cmd.Parameters.AddWithValue("@fechaAgenda", a.fechaAgenda);
