@@ -230,6 +230,13 @@
               <span class="menu-title">Dashboard</span>
             </a>
           </li>
+            
+          <li class="nav-item">
+            <a class="nav-link" href="./admsolicitudes.aspx">
+              <i class="menu-icon mdi mdi-calendar"></i>
+              <span class="menu-title">Solicitudes</span>
+            </a>
+          </li>
           
             
           <li class="nav-item">

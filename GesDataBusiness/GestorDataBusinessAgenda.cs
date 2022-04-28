@@ -27,5 +27,38 @@ namespace ges.data.business
             }
             return r;
         }
+
+
+        public listaAgenda ListarAgenda(int id)
+        {
+            listaAgenda lb = new listaAgenda();
+            try
+            {
+                GestorDataAccessAgenda ga = new GestorDataAccessAgenda();
+                lb = ga.Listar(id);
+            }
+            catch (Exception)
+            {
+                lb = null;
+
+            }
+            return lb;
+        }
+
+        public Respuesta CambiarEstadoAgenda(Int32 id, Int16 estado)
+        {
+            Respuesta r = new Respuesta();
+            try
+            {
+                GestorDataAccessAgenda gb = new GestorDataAccessAgenda();
+                r = gb.CambioEstado(id, estado);
+            }
+            catch (Exception ex)
+            {
+                r.estado = 1;
+                r.descripcion = "Cambio de estado fallo, error:" + ex.Message.ToString();
+            }
+            return r;
+        }
     }
 }

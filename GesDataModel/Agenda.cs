@@ -18,6 +18,8 @@ namespace ges.data.model
         public int idArea { get; set; }
         public string asunto { get; set; }
         public string descripcion { get; set; }
+        public string nombreServicio { get; set; }
+        public string nombrePabellon { get; set; }
         public string fechaAgenda { get; set; }
         public string horaAgenda { get; set; }
         public string fechaReg { get; set; }

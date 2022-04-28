@@ -51,15 +51,6 @@ namespace ges.data.presentation
         protected global::System.Web.UI.WebControls.HiddenField idUsuarioPaciente;
 
         /// <summary>
-        /// Control idServicio.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField idServicio;
-
-        /// <summary>
         /// Control idArea.
         /// </summary>
         /// <remarks>
@@ -67,6 +58,15 @@ namespace ges.data.presentation
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField idArea;
+
+        /// <summary>
+        /// Control idServicio.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField idServicio;
 
         /// <summary>
         /// Control idPabellon.
