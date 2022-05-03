@@ -15,22 +15,13 @@ namespace ges.data.presentation
     {
 
         /// <summary>
-        /// Control datos.
+        /// Control formularioBuscar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label datos;
-
-        /// <summary>
-        /// Control formularioAgregar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm formularioAgregar;
+        protected global::System.Web.UI.HtmlControls.HtmlForm formularioBuscar;
 
         /// <summary>
         /// Control idAgenda.
@@ -78,6 +69,24 @@ namespace ges.data.presentation
         protected global::System.Web.UI.WebControls.HiddenField idArea;
 
         /// <summary>
+        /// Control idPabellon.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField idPabellon;
+
+        /// <summary>
+        /// Control idEstado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField idEstado;
+
+        /// <summary>
         /// Control estadoAgenda.
         /// </summary>
         /// <remarks>
@@ -94,5 +103,41 @@ namespace ges.data.presentation
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField accionAProcesar;
+
+        /// <summary>
+        /// Control comboPabellon.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label comboPabellon;
+
+        /// <summary>
+        /// Control comboEstado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label comboEstado;
+
+        /// <summary>
+        /// Control buttonBuscar2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton buttonBuscar2;
+
+        /// <summary>
+        /// Control datos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label datos;
     }
 }

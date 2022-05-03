@@ -12,18 +12,38 @@ namespace ges.data.presentation
 {
     public partial class admsolicitudes : System.Web.UI.Page
     {
+        List<(int idEstado, string descEstado, string accionEstado)> estadoSolicitud = new List<(int, string, string)>()
+                        {
+                            (1,"En Revisión","En Revisión") ,
+                            (2,"En Preparación","En Preparación"),
+                            (3,"Listo para Entregar","Listo para Entregar"),
+                            (4,"Entregado","Entregar")
+                        };
         protected void Page_Load(object sender, EventArgs e)
         {
+            idUsuario.Value = Session["usuarioId"].ToString();
+
             if (accionAProcesar.Value.Equals("CambiarEstado"))
             {
-                CambiarEstado(Convert.ToString(idAgenda.Value), Convert.ToString(estadoAgenda.Value));
+                CambiarEstado(Convert.ToString(idAgenda.Value), Convert.ToString(idEstado.Value));
+                accionAProcesar.Value = "";
             }
 
-            idUsuario.Value = Session["usuarioId"].ToString();
-            datos.Text = Listar(Convert.ToInt32(idUsuario.Value));
+            comboPabellon.Text = CrearComboPabellon("cmpidpabellon", idPabellon.Value);
+            comboEstado.Text = CrearComboEstado("cmpidestado", estadoAgenda.Value);
+            datos.Text = Listar(Convert.ToInt32(idUsuario.Value),idPabellon.Value,estadoAgenda.Value);
         }
 
-        public string Listar(int idUsuario)
+        /*
+        protected void Buscar_Click(object sender, EventArgs e)
+        {
+            estadoAgenda.Value = cmpidestado.Value;
+            idPabellon.Value = cmpidpabellon.Value;
+            datos.Text = Listar(Convert.ToInt32(idUsuario.Value));
+        }
+        */
+
+        public string Listar(int idUsuario, string idPabellon, string estadoAgenda)
         {
             try
             {
@@ -61,25 +81,8 @@ namespace ges.data.presentation
                         string identificador = pdto.idAgenda.ToString();
                         string fechaAgendada = pdto.fechaAgenda + " " + pdto.horaAgenda;
                         int idEstado = pdto.estado;
-                        List<(int idEstado, string descEstado, string accionEstado)> estadoSolicitud = new List<(int, string, string)> ()
-                        {
-                            (1,"En Revisión","En Revisión") ,
-                            (2,"En Preparación","En Preparación"),
-                            (3,"Listo para Entregar","Listo para Entregar"),
-                            (4,"Entregado","Entregar")
-                        };
-                        /*
-                        string cadest = "Activar";
-                        string cadestDesc = "Desactivo";
-                        string cadclass = "glyphicon-remove";
-                        if (pdto.estado == 1)
-                        {
-                            cadest = "Desactivar";
-                            cadestDesc = "Activo";
-                            cadclass = "glyphicon-ok";
-                        }
-                        */
-                        if (pdto.idUsuario == idUsuario)
+
+                        if (pdto.idUsuario == idUsuario && (idPabellon == pdto.idPabellon.ToString() || idPabellon == "") && (estadoAgenda == pdto.estado.ToString() || estadoAgenda == ""))
                         {
                             tbl.Append("<tr id=\"fila" + identificador + "\">");
                             tbl.Append("<td>" + identificador + "</td>");
@@ -104,11 +107,7 @@ namespace ges.data.presentation
                             {
                                 tbl.Append("<button id=\"btnentregado_" + identificador + "\" type=\"button\" class=\"btn btn-success btn-fw\" disabled><i class=\"mdi mdi-upload\">" + estadoSolicitud[3].descEstado + "</i></button>");
                             }
-                            /*
-                            tbl.Append("<button id=\"btnpreparacion_" + identificador + "\" type=\"button\" class=\"btn btn-primary btn-fw\" runat=\"server\" OnClick=\"javascript:CambiarEstadoAgenda(" + identificador + "," + idEstado.ToString() + ")\"><i class=\"mdi mdi-pipe\">" + estadoSolicitud[1].descEstado + "</i></button>");
-                            tbl.Append("&nbsp;<button id=\"btnlistoentregar_" + identificador + "\" type=\"button\" class=\"btn btn-info btn-fw\" runat=\"server\" OnClick=\"javascript:CambiarEstadoAgenda(" + identificador + "," + idEstado.ToString() + ")\"><i class=\"mdi mdi-calendar-clock\">" + estadoSolicitud[2].descEstado + "</i></button>");
-                            tbl.Append("&nbsp;<button id=\"btnentregado_" + identificador + "\" type=\"button\" class=\"btn btn-success btn-fw\" runat=\"server\" OnClick=\"javascript:CambiarEstadoAgenda(" + identificador + "," + idEstado.ToString() + ")\"><i class=\"mdi mdi-upload\">" + estadoSolicitud[3].descEstado + "</i></button>");
-                            */
+
                             tbl.Append("</td></tr>");
                         }
                     }
@@ -141,11 +140,86 @@ namespace ges.data.presentation
                     Page.ClientScript.RegisterStartupScript(GetType(), "msgbox", "alert('Error verifique:' " + r.descripcion + "); ", true);
                 }
 
-                datos.Text = Listar(Convert.ToInt32(id));
+                datos.Text = Listar(Convert.ToInt32(id),idPabellon.Value,estadoAgenda.Value);
             }
             catch (Exception ex)
             {
                 Page.ClientScript.RegisterStartupScript(GetType(), "msgbox", "alert('Error verifique:' " + ex.Message.ToString() + "); ", true);
+                throw;
+            }
+        }
+
+        public static string CrearComboPabellon(string nombrecampo, string idPabellon)
+        {
+            try
+            {
+                GestorDataBusinessPabellones gb = new GestorDataBusinessPabellones();
+                listaPabellones obj = gb.ListarPabellones(0);
+
+                string combo = "<select runat=\"server\" id=\"" + nombrecampo + "\" name=\"" + nombrecampo + "\" class=\"form-control\" onchange=\"CambioPabellon()\" aria-required=\"True\" > ";
+                combo = combo + "<option value=\"\">Seleccione</option>";
+
+                if (obj.ListPabellones.Count() > 0)
+                {
+
+                    IEnumerable<Pabellones> query = obj.ListPabellones.OrderBy(num => num.nombreServicio);
+
+                    foreach (var l in query)
+                    {
+                        string t1 = l.idPabellon.ToString();
+                        string t2 = l.nombre.ToString();
+                        string t3 = l.nombreServicio.ToString();
+                        string selected = "selected";
+                        if (idPabellon == t1)
+                        {
+                            combo = combo + "<option value='" + t1 + "' " + selected + ">" + t3 + " - " + t2 + "</option>";
+                        }
+                        else
+                        {
+                            combo = combo + "<option value='" + t1 + "'>" + t3 + " - " + t2 + "</option>";
+                        }
+                    }
+                }
+                combo = combo + "</select>";
+                return combo;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public string CrearComboEstado(string nombrecampo, string estadoAgenda)
+        {
+            try
+            {
+                /*
+                List<(int idEstado, string descEstado, string accionEstado)> estadoSolicitud = new List<(int, string, string)>()
+                        {
+                            (?,"En Revisión","En Revisión") ,
+                            (?,"En Preparación","En Preparación"),
+                            (?,"Listo para Entregar","Listo para Entregar"),
+                            (?,"Entregado","Entregar")
+                        };
+                */
+                string combo = "<select runat=\"server\" id=\"" + nombrecampo + "\" name=\"" + nombrecampo + "\" class=\"form-control\" onchange=\"CambioEstado()\" aria-required=\"True\">" +
+                    "<option value=''>Seleccione</option>";
+                for(int i = 0; i < estadoSolicitud.Count(); i++)
+                {
+                    if (estadoSolicitud[i].idEstado.ToString() == estadoAgenda)
+                    {
+                        combo = combo + "<option value='" + estadoSolicitud[i].idEstado + "' selected>" + estadoSolicitud[i].descEstado + "</option>";
+                    }
+                    else
+                    {
+                        combo = combo + "<option value='" + estadoSolicitud[i].idEstado + "'>" + estadoSolicitud[i].descEstado + "</option>";
+                    }
+                }
+                combo = combo + "</select>";
+                return combo;
+            }
+            catch (Exception)
+            {
                 throw;
             }
         }
