@@ -173,7 +173,7 @@ namespace ges.data.presentation
                             tbl.Append("<td id=\"valestado_" + identificador + "\" rel=\"" + pdto.estado + "\">" + cadestDesc + "</td>");
                             tbl.Append("<td class=\"text-right\">");
 
-                            tbl.Append("&nbsp;<button id=\"btncambiaestado_" + identificador + "\" type=\"button\" class=\"btn btn - secondary btn - fw\" runat=\"server\" OnClick=\"javascript:CambiarEstadoPabellon(" + identificador + "," + pdto.estado.ToString() + ")\"><i class=\"mdi mdi-cloud-download\">" + cadest + "</i></button>");
+                            tbl.Append("&nbsp;<button id=\"btncambiaestado_" + identificador + "\" type=\"button\" class=\"btn btn-secondary btn-fw\" runat=\"server\" OnClick=\"javascript:CambiarEstadoPabellon(" + identificador + "," + pdto.estado.ToString() + ")\"><i class=\"mdi mdi-cloud-download\">" + cadest + "</i></button>");
                             tbl.Append("&nbsp;<button id=\"btneliminar_" + identificador + "\" type=\"button\" class=\"btn btn-danger btn-fw\" runat=\"server\" OnClick=\"javascript:EliminarPabellon(" + identificador + ")\"><i class=\"mdi mdi-alert-outline\">Eliminar</i></button>");
 
                             tbl.Append("</td></tr>");
@@ -215,7 +215,6 @@ namespace ges.data.presentation
                 Page.ClientScript.RegisterStartupScript(GetType(), "msgbox", "alert('Error verifique:' " + ex.Message.ToString() + "); ", true);
                 throw;
             }
-
         }
 
         public void EliminarKitArticulo(string id)

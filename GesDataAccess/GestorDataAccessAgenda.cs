@@ -59,5 +59,86 @@ namespace ges.data.access
                 return r;
             }
         }
+        public listaAgenda Listar(int id)
+        {
+            try
+            {
+                listaAgenda result = new listaAgenda();
+                using (SqlConnection conn = new SqlConnection(connstring))
+                {
+                    if (conn != null && conn.State == ConnectionState.Closed)
+                    {
+                        conn.Open();
+                    }
+                    SqlCommand cmd = new SqlCommand("cruListarAgenda", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@IdUsuario", id);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    int i = 0;
+                    while (i < dt.Rows.Count)
+                    {
+                        Agenda obj = new Agenda();
+                        obj.idAgenda = Convert.ToInt32(dt.Rows[i]["IDAGENDA"]);
+                        obj.idUsuario = Convert.ToInt32(dt.Rows[i]["IDUSUARIO"]);
+                        obj.nombreServicio = dt.Rows[i]["NOMBRESERVICIO"].ToString();
+                        obj.nombrePabellon = dt.Rows[i]["nombre"].ToString();
+                        obj.asunto = dt.Rows[i]["ASUNTO"].ToString();
+                        obj.descripcion = dt.Rows[i]["DESCRIPCION"].ToString();
+                        obj.fechaAgenda = dt.Rows[i]["FECHAAGENDA"].ToString();
+                        obj.horaAgenda = (dt.Rows[i]["HORAAGENDA"].ToString());
+                        obj.fechaReg = dt.Rows[i]["FECHAREG"].ToString();
+                        obj.fechaAct = dt.Rows[i]["FECHAACT"].ToString();
+                        obj.estado = Convert.ToInt16(dt.Rows[i]["ESTADO"]);
+                        result.Add(obj);
+                        i++;
+                    }
+                    return result;
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public Respuesta CambioEstado(Int32 id, Int16 estadonuevo)
+        {
+
+            Respuesta r = new Respuesta();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connstring))
+                {
+                    if (conn != null && conn.State == ConnectionState.Closed) { conn.Open(); }
+                    SqlCommand cmd = new SqlCommand("CambiarEstadoAgenda", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@IdAgenda", id);
+                    cmd.Parameters.AddWithValue("@EstadoNuevo", estadonuevo);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        r.estado = Convert.ToInt32(dt.Rows[0]["estadosp"]);
+                        r.descripcion = dt.Rows[0]["mensajesp"].ToString();
+                    }
+                    return r;
+                }
+            }
+            catch (Exception e)
+            {
+                r.estado = 0;
+                r.descripcion = e.Message.ToString();
+                return r;
+            }
+        }
+
     }
 }

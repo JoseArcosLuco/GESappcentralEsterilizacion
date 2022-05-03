@@ -68,6 +68,7 @@
     <Content Include="admmetodoesterilizacion.aspx" />
     <Content Include="admpabellones.aspx" />
     <Content Include="admservicios.aspx" />
+    <Content Include="admsolicitudes.aspx" />
     <Content Include="cerrar.aspx" />
     <Content Include="images\LogoPng.png" />
     <Content Include="js\datatables\bootstrap.css" />
@@ -81,6 +82,7 @@
     <Content Include="js\datatables\jszip.min.js" />
     <Content Include="js\datatables\pdfmake.min.js" />
     <Content Include="js\datatables\vfs_fonts.js" />
+    <Content Include="js\mantenedores\admagenda.js" />
     <Content Include="js\mantenedores\admarticulos.js" />
     <Content Include="js\mantenedores\admkitarticulo.js" />
     <Content Include="js\mantenedores\admkit.js" />
@@ -2145,6 +2147,13 @@
     </Compile>
     <Compile Include="admservicios.aspx.designer.cs">
       <DependentUpon>admservicios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admsolicitudes.aspx.cs">
+      <DependentUpon>admsolicitudes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admsolicitudes.aspx.designer.cs">
+      <DependentUpon>admsolicitudes.aspx</DependentUpon>
     </Compile>
     <Compile Include="cerrar.aspx.cs">
       <DependentUpon>cerrar.aspx</DependentUpon>

@@ -14,8 +14,8 @@
             <asp:hiddenfield runat="server" id="idUsuario"></asp:hiddenfield>
             <asp:hiddenfield runat="server" id="idUsuaruioProfesional"></asp:hiddenfield>
             <asp:hiddenfield runat="server" id="idUsuarioPaciente"></asp:hiddenfield>
-            <asp:hiddenfield runat="server" id="idServicio"></asp:hiddenfield>
             <asp:hiddenfield runat="server" id="idArea"></asp:hiddenfield>
+            <asp:hiddenfield runat="server" id="idServicio"></asp:hiddenfield>
             <asp:hiddenfield runat="server" id="idPabellon"></asp:hiddenfield>
             <asp:hiddenfield runat="server" id="accionAProcesar"></asp:hiddenfield>
             <div class="row">
