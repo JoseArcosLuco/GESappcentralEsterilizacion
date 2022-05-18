@@ -73,11 +73,14 @@ namespace ges.data.presentation
             }
 
         }
+
+        /*
         protected void Buscar_Click(object sender, EventArgs e)
         {
             datos.Text = Listar(Convert.ToInt32(idServicio.Value));
 
         }
+        */
 
         public static string CrearComboServicios(string nombrecampo, string idServicio, bool lista)
         {

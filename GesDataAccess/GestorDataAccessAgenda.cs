@@ -84,6 +84,7 @@ namespace ges.data.access
                         Agenda obj = new Agenda();
                         obj.idAgenda = Convert.ToInt32(dt.Rows[i]["IDAGENDA"]);
                         obj.idUsuario = Convert.ToInt32(dt.Rows[i]["IDUSUARIO"]);
+                        obj.idPabellon = Convert.ToInt32(dt.Rows[i]["IDPABELLON"]);
                         obj.nombreServicio = dt.Rows[i]["NOMBRESERVICIO"].ToString();
                         obj.nombrePabellon = dt.Rows[i]["nombre"].ToString();
                         obj.asunto = dt.Rows[i]["ASUNTO"].ToString();

@@ -1,0 +1,41 @@
+USE [iaCore_GestionEsterilizacion]
+GO
+
+
+ALTER PROCEDURE [dbo].[cruListarAgenda] 
+	@IdUsuario int
+AS
+BEGIN
+	SET NOCOUNT ON;
+	BEGIN TRY
+		SELECT	agenda.IDAGENDA,
+			agenda.IDUSUARIO,
+			agenda.IDPABELLON,
+			pabellon.NOMBRESERVICIO,
+			pabellon.nombre,
+			agenda.ASUNTO,
+			agenda.DESCRIPCION,
+			CONVERT(VARCHAR,agenda.FECHAAGENDA, 103 ) as FECHAAGENDA,
+			CONVERT(VARCHAR(5), agenda.HORAAGENDA) as HORAAGENDA,
+			agenda.FECHAREG,
+			agenda.FECHAACT,
+			agenda.ESTADO
+		FROM dbo.agenda
+		INNER JOIN (SELECT	pabellones.idPabellon,
+						pabellones.nombre,
+						servicioClinico.NOMBRESERVICIO,
+						pabellones.estado
+					FROM dbo.pabellones
+					INNER JOIN dbo.servicioClinico
+					ON pabellones.idServicioClinicoArea = servicioClinico.IDSERVICIOCLINICO
+					WHERE pabellones.estado in (0,1) and servicioClinico.ESTADO in (0,1))
+					as pabellon
+		ON agenda.IDPABELLON = pabellon.idPabellon
+		WHERE agenda.IDUSUARIO = @IdUsuario and agenda.ESTADO in (1,2,3,4) and pabellon.estado in (0,1)
+		ORDER BY agenda.IDAGENDA;	
+	END TRY
+	BEGIN CATCH
+		SELECT ERROR_NUMBER() AS estadosp,
+		ERROR_MESSAGE() AS mensajesp
+	END CATCH;    
+END

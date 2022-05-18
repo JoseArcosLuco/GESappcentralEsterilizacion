@@ -17,7 +17,7 @@ namespace ges.data.access
         /* La Base de Datos tiene una relación Pabellon a ServicioClinicoArea, actualmente el sistema opera con una relación a la tabla ServicioClinico, tener en cuenta que los nombres pueden terminar ser confusos
          * de corregirse la nomenclatura debe revisarse de Pabellones la Tabla en la BD, los procedimientos de almacenado en la BD, el Data Access y el Modelo  */
 
-        public listaPabellones Listar(Int32 id) // Actualizar busqueda por servicio
+        public listaPabellones Listar(Int32 id)
         {
             try
             {
