@@ -53,6 +53,7 @@
     <Compile Include="Pabellones.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecepcionArticulos.cs" />
+    <Compile Include="RecepcionInstrumental.cs" />
     <Compile Include="RecepcionLavado.cs" />
     <Compile Include="RecepcionPreparacionEmpaque.cs" />
     <Compile Include="RecepcionSalidaPabellon.cs" />

@@ -51,6 +51,7 @@
     <Compile Include="GestorDataAccessMaquinaEsterilizacion.cs" />
     <Compile Include="GestorDataAccessMetodoEsterilizacion.cs" />
     <Compile Include="GestorDataAccessPabellones.cs" />
+    <Compile Include="GestorDataAccessRecepcionInstrumental.cs" />
     <Compile Include="GestorDataAccessRecepcionLavado.cs" />
     <Compile Include="GestorDataAccessRecepcionPreparacionEmpaque.cs" />
     <Compile Include="GestorDataAccessRecepcionSalidaPabellon.cs" />
