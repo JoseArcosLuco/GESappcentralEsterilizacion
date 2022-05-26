@@ -94,6 +94,8 @@
     <Content Include="js\recepcioncontenedores\recepcionarealavado.js" />
     <Content Include="js\recepcioncontenedores\recepcionarealavadorevision.js" />
     <Content Include="js\recepcioncontenedores\recepcioncentralesterilizacion.js" />
+    <Content Include="js\recepcioncontenedores\recepcioninstrumental.js" />
+    <Content Include="js\recepcioncontenedores\recepcioninstrumentalrevision.js" />
     <Content Include="js\recepcioncontenedores\recepcionpreparacionempaque.js" />
     <Content Include="js\recepcioncontenedores\recepcionsalidaesterilizacion.js" />
     <Content Include="js\recepcioncontenedores\recepcionsalidapabellon.js" />
@@ -106,6 +108,8 @@
     <Content Include="recepcionarealavado.aspx" />
     <Content Include="recepcionarealavadorevision.aspx" />
     <Content Include="recepcioncentralesterilizacion.aspx" />
+    <Content Include="recepcioninstrumental.aspx" />
+    <Content Include="recepcioninstrumentalrevision.aspx" />
     <Content Include="recepcionmantenciones.aspx" />
     <Content Include="recepcionpreparacionempaque.aspx" />
     <Content Include="recepcionpreparacionempaquerevision.aspx" />
@@ -2197,6 +2201,20 @@
     </Compile>
     <Compile Include="recepcioncentralesterilizacion.aspx.designer.cs">
       <DependentUpon>recepcioncentralesterilizacion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recepcioninstrumental.aspx.cs">
+      <DependentUpon>recepcioninstrumental.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recepcioninstrumental.aspx.designer.cs">
+      <DependentUpon>recepcioninstrumental.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="recepcioninstrumentalrevision.aspx.cs">
+      <DependentUpon>recepcioninstrumentalrevision.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="recepcioninstrumentalrevision.aspx.designer.cs">
+      <DependentUpon>recepcioninstrumentalrevision.aspx</DependentUpon>
     </Compile>
     <Compile Include="recepcionmantenciones.aspx.cs">
       <DependentUpon>recepcionmantenciones.aspx</DependentUpon>

@@ -284,6 +284,9 @@
             <div class="collapse" id="ui-basic-r">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item">
+                  <a class="nav-link" href="./recepcioninstrumental.aspx">Recepción Instrumental</a>
+                </li>
+                <li class="nav-item">
                   <a class="nav-link" href="./recepcionsalidapabellon.aspx">Recepción Pabellon</a>
                 </li>
                 <li class="nav-item">
