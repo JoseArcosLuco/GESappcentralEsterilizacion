@@ -1,0 +1,42 @@
+USE [iaCore_GestionEsterilizacion]
+GO
+
+
+CREATE PROCEDURE [dbo].[AgregarRecepcionInstrumental] 
+	@idUsuario numeric(18,0),
+	@nombreFormulario varchar(250),
+	@codigoTrazable varchar(50),
+	@puesto int,
+	@materialLimpio tinyint,
+	@materialOrganicoVisible tinyint,
+	@desarmePiezas varchar(2),
+	@cantMaterialALavar int,
+	@nombrePaciente varchar(350),
+	@rutPaciente varchar(10),
+	@observacion varchar(250),
+	@estadoCheck int
+As
+BEGIN
+	SET NOCOUNT ON;
+	BEGIN TRY
+		DECLARE @idStock Numeric(18,0)		
+		DECLARE @horaIngreso datetime
+		SET @horaIngreso = getdate()
+		SET @idStock = (SELECT TOP 1 IDSTOCK FROM stock WhERE CODIGOTRAZABLE = @codigoTrazable)
+		BEGIN
+			INSERT INTO respuestaCheckList(IDUSUARIO,NOMBREFORMULARIO,IDSTOCK,CODIGOTRAZABLE,PUESTO,HORA,
+			MATERIALLIMPIO,MATERIALORGANICOVISIBLE,DESARMEPIEZAS,CANTMATERIALALAVAR,
+			NOMBREPACIENTE,RUTPACIENTE,OBSERVACION,FECHAREG,FECHAACT,ESTADO,ESTADOCHECK)
+			values (@idUsuario,@nombreFormulario,@idStock,@codigoTrazable,@puesto,@horaIngreso,
+			@materialLimpio,@materialOrganicoVisible,@desarmePiezas,@cantMaterialALavar,
+			@nombrePaciente,@rutPaciente,@observacion,getdate(),getdate(),1,@estadoCheck);
+				
+			UPDATE stock SET FECHAACT=GETDATE(), IDBODEGA = @puesto WhERE IDSTOCK = @idStock;
+			SELECT 1 AS estadoSp, @@identity AS mensajeSp;
+		END
+	END TRY
+	BEGIN CATCH  
+		SELECT	error_number() as estadosp,
+		error_message() as mensajesp;  
+	END CATCH;     
+END

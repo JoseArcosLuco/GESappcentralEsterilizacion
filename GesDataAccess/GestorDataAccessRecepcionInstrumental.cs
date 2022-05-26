@@ -147,6 +147,34 @@ namespace ges.data.access
             {
                 using (SqlConnection conn = new SqlConnection(connstring))
                 {
+                    if (conn != null && conn.State == ConnectionState.Closed) { conn.Open(); }
+                    SqlCommand cmd = new SqlCommand("AgregarRecepcionInstrumental", conn);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@idUsuario", r.idUsuario);
+                    cmd.Parameters.AddWithValue("@nombreFormulario", r.nombreFormulario);
+                    cmd.Parameters.AddWithValue("@codigoTrazable", r.codigoTrazable);
+                    cmd.Parameters.AddWithValue("@puesto", r.puesto);
+
+                    cmd.Parameters.AddWithValue("@materialLimpio", r.materialLimpio);
+                    cmd.Parameters.AddWithValue("@materialOrganicoVisible", r.materialOrganicoVisible);
+                    cmd.Parameters.AddWithValue("@desarmePiezas", r.desarmePiezas);
+                    cmd.Parameters.AddWithValue("@cantMaterialALavar", r.cantMaterialALavar);
+
+                    cmd.Parameters.AddWithValue("@nombrePaciente", r.nombrePaciente);
+                    cmd.Parameters.AddWithValue("@rutPaciente", r.rutPaciente);
+                    cmd.Parameters.AddWithValue("@observacion", r.observacion);
+
+                    cmd.Parameters.AddWithValue("@estadoCheck", r.estadoCheck);
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    if (dt.Rows.Count > 0)
+                    {
+                        s.estado = Convert.ToInt32(dt.Rows[0]["estadosp"]);
+                        s.descripcion = dt.Rows[0]["mensajesp"].ToString();
+                    }
                     return s;
                 }
             }

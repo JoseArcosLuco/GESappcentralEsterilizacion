@@ -11,37 +11,18 @@ namespace ges.data.presentation
 {
     public partial class recepcioninstrumentalrevision : System.Web.UI.Page
     {
-        string idUsuarioRespaldo = "";
-        string idServicioRespaldo = "";
-        string idPabellonRespaldo = "";
-        string idCodigoTrazableRespaldo = "";
-        string nombreArticuloRespaldo = "";
-        string idBodegaRespaldo = "";
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 cargaTraza();
             }
-            idUsuarioRespaldo = idUsuario.Value;
-            idServicioRespaldo = idServicio.Value;
-            idPabellonRespaldo = idPabellon.Value;
-            idCodigoTrazableRespaldo = idCodigoTrazable.Value;
-            nombreArticuloRespaldo = nombreArticulo.Value;
-            idBodegaRespaldo = idBodega.Value;
 
-            if (idUsuarioRespaldo.Equals(""))
-            {
-                idUsuarioRespaldo = Session["usuarioId"].ToString();
-                idUsuario.Value = idUsuarioRespaldo;
-            }
+            idUsuario.Value = Session["usuarioId"].ToString();
 
             lblArea.Text = "Área " + nombreBodega.Value + " / Revisión";
-            lblCodigoTrazable.Text = idCodigoTrazableRespaldo;
-            lblnombreArticulo.Text = nombreArticuloRespaldo;
-
-            comboServicios.Text = CrearComboServicios("cmpidservicio", idServicio.Value);
+            lblCodigoTrazable.Text = idCodigoTrazable.Value;
+            lblnombreArticulo.Text = nombreArticulo.Value;
 
         }
         public void cargaTraza()
@@ -59,7 +40,7 @@ namespace ges.data.presentation
             {
                 string combo = "";
                 combo = combo + "<table class=\"table table-striped table-bordered table-sm\"><tr>";
-                combo = combo + "<th>id</th><th>fecha</th><th>hora</th><th>Nombre Formulario</th><th>Usuario</th><th>Check</th></tr>";
+                combo = combo + "<th>ID</th><th>Fecha</th><th>Hora</th><th>Nombre Formulario</th><th>Usuario</th><th>Check</th></tr>";
                 if (result.List.Count() > 0)
                 {
                     foreach (var l in result.List)
@@ -83,43 +64,6 @@ namespace ges.data.presentation
             }
         }
 
-        public static string CrearComboServicios(string nombrecampo, string idServicio)
-        {
-            try
-            {
-                GestorDataBusinessServicioClinico gb = new GestorDataBusinessServicioClinico();
-                listaServicioClinico obj = gb.ListarServicioClinico();
-                string combo = "<select runat=\"server\" id=\"" + nombrecampo + "\" name=\"" + nombrecampo + "\" class=\"form-control\" onchange=\"CambioServicio()\" aria-required=\"True\" required=\"required\" \"> "
-                                + "<option value=\"\">Seleccione</option>";
-
-                if (obj.List.Count() > 0)
-                {
-                    IEnumerable<ServicioClinico> query = obj.List.OrderBy(num => num.nombre);
-
-                    foreach (var l in query)
-                    {
-                        string t1 = l.idServicioClinico.ToString();
-                        string t2 = l.nombre.ToString();
-                        string selected = "selected";
-                        if (idServicio == t1)
-                        {
-                            combo = combo + "<option value='" + t1 + "' " + selected + ">" + t2 + "</option>";
-                        }
-                        else
-                        {
-                            combo = combo + "<option value='" + t1 + "'>" + t2 + "</option>";
-                        }
-                    }
-                }
-                combo = combo + "</select>";
-                return combo;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
         protected void Button_Asignar_Punto_Control_Click(object sender, EventArgs e)
         {
             RecepcionInstrumental r = new RecepcionInstrumental();
@@ -127,6 +71,68 @@ namespace ges.data.presentation
             Respuesta re = new Respuesta();
             try
             {
+                r.idUsuario = Convert.ToInt64(idUsuario.Value);
+                r.nombreFormulario = nombreBodega.Value;
+                r.codigoTrazable = idCodigoTrazable.Value;
+                r.puesto = idBodega.Value;
+
+                if (cmpmateriallimpio.Checked){
+                    r.materialLimpio = 1;
+                }
+                else{
+                    r.materialLimpio = 0;
+                }
+                if (cmpmaterialorganicovisible.Checked){
+                    r.materialOrganicoVisible = 1;
+                }
+                else{
+                    r.materialOrganicoVisible = 0;
+                }
+                if (cmpdesarmepiezasensambladas.Checked){
+                    r.desarmePiezas = "Si";
+                }
+                else{
+                    r.desarmePiezas = "No";
+                }
+
+                r.cantMaterialALavar = Convert.ToInt32(cmpcantidadmaterial.Value);
+
+                r.nombrePaciente = cmpnombrepaciente.Value;
+                r.rutPaciente = cmprutpaciente.Value;
+                r.observacion = cmpobservaciones.Value;
+
+                r.estadoCheck = 1;
+
+                re = gdr.GrabarRecepcionInstrumental(r);
+
+                if (re.estado == 0)
+                {
+                    Page.ClientScript.RegisterStartupScript(GetType(), "msgbox", "alert('Error:" + re.descripcion + "!');", true);
+
+                    cmpmateriallimpio.Value = "";
+                    cmpmaterialorganicovisible.Value = "";
+                    cmpdesarmepiezasensambladas.Value = "";
+                    cmpcantidadmaterial.Value = "";
+
+                    cmpnombrepaciente.Value = "";
+                    cmprutpaciente.Value = "";
+                    cmpobservaciones.Value = "";
+                }
+                else
+                {
+                    Page.ClientScript.RegisterStartupScript(GetType(), "msgbox", "alert('Ok Id Revisión:" + re.descripcion + "!');", true);
+
+                    cmpmateriallimpio.Value = "";
+                    cmpmaterialorganicovisible.Value = "";
+                    cmpdesarmepiezasensambladas.Value = "";
+                    cmpcantidadmaterial.Value = "";
+
+                    cmpnombrepaciente.Value = "";
+                    cmprutpaciente.Value = "";
+                    cmpobservaciones.Value = "";
+
+                    cargaTraza();
+                }
 
             }
             catch (Exception ex)
