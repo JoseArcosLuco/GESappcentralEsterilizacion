@@ -14,11 +14,6 @@ namespace ges.data.presentation
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Al ingresar a la página viene con un idBodega 2 en vez de generar el campo vacio, desconzco que lo esta generando
-            if (!IsPostBack)
-            {
-                idBodega.Value = "0";
-            }
             comboAreaRecepcion.Text = CrearComboRecepcion("cmpAreaRecepcion", idBodega.Value);
 
             if (idBodega.Value != "")
@@ -27,14 +22,10 @@ namespace ges.data.presentation
             }
             else
             {
-                datosEnBodega.Text = ListarPunto(0);
-            }
-
-            if (datosEnBodega.Text == "" && !IsPostBack)
-            {
                 datosEnBodega.Text = "Debe seleccionar un área de recepción.";
             }
-            else if(datosEnBodega.Text == "")
+
+            if(datosEnBodega.Text == "")
             {
                 datosEnBodega.Text = "0 Registros Encontrados!";
             }

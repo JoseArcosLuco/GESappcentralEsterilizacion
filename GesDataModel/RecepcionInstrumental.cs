@@ -23,6 +23,15 @@ namespace ges.data.model
         public string nombreUsuario { get; set; }
         public string puesto { get; set; }
         public string codigoTrazable { get; set; }
+        public string nombrePaciente { get; set; }
+        public string rutPaciente { get; set; }
+
+        public byte materialLimpio { get; set; }
+        public byte materialOrganicoVisible { get; set; }
+        public string desarmePiezas { get; set; }
+        public int cantMaterialALavar { get; set; }
+        public string observacion { get; set; }
+
         public string fechaMantencion { get; set; }
         public string fechaReg { get; set; }
         public string horaReg { get; set; }

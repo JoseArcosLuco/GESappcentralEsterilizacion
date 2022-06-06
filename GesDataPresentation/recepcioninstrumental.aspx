@@ -11,7 +11,7 @@
 
     <form id="formularioAgregar" name="formularioAgregar" method="post" runat="server"> 
         <asp:hiddenfield runat="server" id="idUsuario"></asp:hiddenfield>
-        <asp:hiddenfield runat="server" id="idBodega" Value="2"></asp:hiddenfield>
+        <asp:hiddenfield runat="server" id="idBodega"></asp:hiddenfield>
         <asp:hiddenfield runat="server" id="nombreBodega"></asp:hiddenfield>
         <asp:hiddenfield runat="server" id="idCodigoTrazable"></asp:hiddenfield>
         <asp:hiddenfield runat="server" id="nombreArticulo"></asp:hiddenfield>

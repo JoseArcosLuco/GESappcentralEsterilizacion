@@ -33,33 +33,6 @@ namespace ges.data.presentation
         protected global::System.Web.UI.WebControls.HiddenField idUsuario;
 
         /// <summary>
-        /// Control idServicio.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField idServicio;
-
-        /// <summary>
-        /// Control nombreServicio.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField nombreServicio;
-
-        /// <summary>
-        /// Control idPabellon.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField idPabellon;
-
-        /// <summary>
         /// Control idCodigoTrazable.
         /// </summary>
         /// <remarks>
@@ -132,31 +105,67 @@ namespace ges.data.presentation
         protected global::System.Web.UI.WebControls.Label lblnombreArticulo;
 
         /// <summary>
-        /// Control comboServicios.
+        /// Control cmpmateriallimpio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label comboServicios;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox cmpmateriallimpio;
 
         /// <summary>
-        /// Control cmpcantmaterialalavar.
+        /// Control cmpmaterialorganicovisible.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText cmpcantmaterialalavar;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox cmpmaterialorganicovisible;
 
         /// <summary>
-        /// Control cmpobs.
+        /// Control cmpdesarmepiezasensambladas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText cmpobs;
+        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox cmpdesarmepiezasensambladas;
+
+        /// <summary>
+        /// Control cmpcantidadmaterial.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText cmpcantidadmaterial;
+
+        /// <summary>
+        /// Control cmpnombrepaciente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText cmpnombrepaciente;
+
+        /// <summary>
+        /// Control cmprutpaciente.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText cmprutpaciente;
+
+        /// <summary>
+        /// Control cmpobservaciones.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText cmpobservaciones;
 
         /// <summary>
         /// Control Button_Asignar_Punto_Control.
